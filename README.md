@@ -14,7 +14,7 @@
 
 这些算法全部自己敲一遍：
 
-**二叉树  
+**二叉树**  
 二叉树    
 二叉查找树  
 Trie树  
@@ -32,16 +32,16 @@ R树
 斐波那契堆(Fibonacci Heap)   
   
   
-**哈希表/散列表 (Hash Table)  
+**哈希表/散列表 (Hash Table)** 
   
   
-**字符串算法:  
+**字符串算法**  
 BF算法  
 KMP算法  
 BM算法  
   
   
-**图的算法:  
+**图的算法**  
 最小生成树  
 拓扑排序  
 关键路径  
@@ -49,7 +49,7 @@ BM算法
   
   
   
-**排序算法(八大排序):  
+**排序算法(八大排序)**  
 快排  
 插入排序 ： 希尔排序
 选择排序 ： 堆排序
@@ -57,14 +57,14 @@ BM算法
 基数排序
 
 
-**查找算法  
+**查找算法**  
 静态查找: 顺序表查找，有序表查找，  
 动态查找: 二叉排序树，AVL树，B- ，B+  
 哈希表：  
 
 
 
-**15个经典基础算法
+**15个经典基础算法**
 
 A*.  
 Dijkstra.  
@@ -82,7 +82,7 @@ KMP
 快递选择SELECT  
   
   
-** @ July   
+** @ July 博客<http://blog.csdn.net/v_july_v> **  
 《数学建模十大经典算法》    
 《数据挖掘领域十大经典算法》    
 《十道海量数据处理面试题》      
@@ -154,16 +154,16 @@ http://mindhacks.cn/2008/09/21/the-magical-bayesian-method/
 MYSQL 背后的数据结构和算法 http://blogread.cn/it/article/4088?f=wb2  
   
   
-**基本算法演示：  
+**基本算法演示**  
 http://sjjg.js.zwu.edu.cn/SFXX/sf1/sfys.html  
 http://www.cs.usfca.edu/~galles/visualization/Algorithms.html  
   
   
    
-**编程网站：
+**编程网站**
 
-http://leetcode.com/
-http://oj.leetcode.com/
-
+http://leetcode.com/  
+http://oj.leetcode.com/  
+  
 
 
