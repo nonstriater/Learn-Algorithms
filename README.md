@@ -1,6 +1,7 @@
 
 >算法虐我千百遍，我待算法如初恋。
 
+
 ##学习方法
  
 1） 把所有经典算法写一遍  
@@ -8,7 +9,7 @@
 3） 加入算法学习社区，相互鼓励学习   
 4） 看经典书籍  
   
-  
+
 
 ##基本数据结构和算法
 
@@ -125,6 +126,10 @@ http://www.chinaunix.net/old_jh/23/437639.html
    
 
 ## 参考链接和学习网站
+
+POJ  http://openjudge.cn/
+这有个POJ上的ACM训练方案 http://www.java3z.com/cwbwebhome/article/article19/res041.html
+
 
 微软面试100题 http://blog.csdn.net/column/details/ms100.html  
 程序员编程艺术 http://blog.csdn.net/v_JULY_v/article/details/6460494  
