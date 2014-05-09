@@ -131,7 +131,7 @@ void quicksort(int *a, int left, int right){
 void merge_sort(int *a, int length){
 
 
-	
+
 
 }
 
@@ -139,33 +139,105 @@ void merge_sort(int *a, int length){
 
 // 堆排序
 
-void heap_sort(int *a, int length){
+void heap_swop(int *a,int *b){
 
-
-
+	*a = *a + *b;
+	*b = *a - *b;
+	*a = *a - *b;
 }
 
 
 
+//自顶向下调整
+void heap_public_adjust(int *a,int i,int length){
 
-#define Max_Number 50000
+	// 三个数里取最大的一个  a[i],a[2i+1],a[2i+2],跟a[i]交换；然后是 a[(i-1)/2],a[i],a[i+1] .. 一直到a[0]
+		int tmp = i , max;//
+		while(2*tmp+1<length){
+			max = 2*tmp+1;
+			//三个数里取最大的一个  a[tmp],a[2tmp+1],a[2tmp+2] 
+			if (2*tmp+2<length)// 越界检查
+			{
+				if (a[max] < a[2*tmp+2])// 先选出最大的子节点
+				{
+					max = 2*tmp+2;
+				}
+			}
+
+			// 和最大孩子比
+			if (a[tmp] >= a[max])
+			{
+				break;
+			}
+			else
+			{
+				heap_swop(&a[tmp],&a[max]);	
+				tmp = 2*tmp+1;
+			}
+
+		}
+
+}
+
+
+// 从第一个非叶子节点a[(length-2)/2]，开始做调整, 跟自己的子节点比较，把最大的孩子换上来就是创建最大堆，
+//反之，把最小的孩子换上来就是创建最小堆 一直到a[0]
+void heap_build(int *a,int length){
+
+	
+	for (int i = (length-2)/2; i >=0 ; --i)
+	{
+		// 三个数里取最大的一个  a[i],a[2i+1],a[2i+2],跟a[i]交换；然后是 a[(i-1)/2],a[i],a[i+1] .. 一直到a[0]
+		heap_public_adjust(a,i,length);
+	
+	}	
+
+}
+
+// 自顶向下调整
+void heap_adjust(int *a,int length){
+
+	heap_public_adjust(a,0,length); //对0号调整
+}
+
+
+void heap_sort(int *a, int length){
+
+	// 建立堆 大根堆，递增排序
+	heap_build(a,length);
+
+	for (int i = length-1; i >0; --i)
+	{
+		//交换
+		heap_swop(&a[0],&a[i]);
+		
+		//调整
+		heap_adjust(a,i);
+	}
+
+}
+
+///////////////////////////////////////////////
+
+
+#define Max_Number 50
 
 int main(){
 
-	//int a[] = {4,87,2,32,5,41,2,9};
+	int a[] = {4,87,2,32,5,2,9,49,49,23,45,2,41};
 	// 准备5000个数
-	int a[Max_Number];
-	for (int i = 0; i < Max_Number; ++i)
-	{
-		a[i]=rand()%Max_Number;
-	}
+	// int a[Max_Number];
+	// for (int i = 0; i < Max_Number; ++i)
+	// {
+	// 	a[i]=rand()%Max_Number;
+	// }
 
 	clock_t start,finish;
 
 	
 
 	start = clock();
-
+	heap_sort(a,sizeof(a)/sizeof(int));  // 有buggggggg
 	//quicksort(a,0,sizeof(a)/sizeof(int)-1); // 0.01s
 	//insert_sort(a,sizeof(a)/sizeof(int));  //  3.85s
 	//select_sort(a,sizeof(a)/sizeof(int));   // 5.3s
