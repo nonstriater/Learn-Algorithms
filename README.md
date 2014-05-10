@@ -83,14 +83,7 @@ KMP
 快递选择SELECT  
   
   
-** @ July 博客<http://blog.csdn.net/v_july_v> **  
-《数学建模十大经典算法》    
-《数据挖掘领域十大经典算法》    
-《十道海量数据处理面试题》      
-《数字图像处理领域的二十四个经典算法》    
-《精选微软等公司经典的算法面试100题》    
-  
-  
+    
   
 ## 算法设计思想
 
@@ -110,26 +103,62 @@ http://www.chinaunix.net/old_jh/23/437639.html
 
 
 
-## 后续阅读
+## 推荐阅读
 
-《算法导论》  
-《编程珠玑》  
-《编程之美》  
+ 
+《数据结构与算法分析》
+《编程之美》
+《算法设计与分析基础》
+
+《算法导论》 有哪些算法
+《算法引论》 如何创造算法   断货
+
 《剑指offer》
+
+
+*侧重经典算法的实现*
+《Elements of Programming》 STL代码 快 准 狠
+《C interfaces and Implementation》
+
+
+《微软的梦工厂》
+《Language Implementatin patterns》
+《Algorithms on Strings,Trees and Sequences》
+
+
+《writing efficient programs》  优化
+
+《Algorithm Design Manual》 红皮书
+
+《编程珠玑》Programming Pearls  偏算法理论 
+《More Programming Pearls》  偏算法轶事
+
+《The science of programming》 证明代码段的正确性   800块一本
+
+
+*高级数据结构*（如元胞自动机、斐波纳契堆、线段树）
+
+《Algorithms》 4版
+《Advanced Data Structures》 各种诡异数据结构和算法  600块
+
 
   
 《深入理解计算机系统》  
 《TCP/IP详解三卷》  
 《UNIX网络编程二卷》  
 《UNIX环境高级编程：第2版》  
+    
+ 
   
-   
-
 ## 参考链接和学习网站
 
-POJ  http://openjudge.cn/
-这有个POJ上的ACM训练方案 http://www.java3z.com/cwbwebhome/article/article19/res041.html
 
+** @ July 博客<http://blog.csdn.net/v_july_v> **  
+《数学建模十大经典算法》    
+《数据挖掘领域十大经典算法》    
+《十道海量数据处理面试题》      
+《数字图像处理领域的二十四个经典算法》    
+《精选微软等公司经典的算法面试100题》 
 
 微软面试100题 http://blog.csdn.net/column/details/ms100.html  
 程序员编程艺术 http://blog.csdn.net/v_JULY_v/article/details/6460494  
@@ -169,6 +198,6 @@ http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
 
 http://leetcode.com/  
 http://oj.leetcode.com/  
-  
+http://openjudge.cn/   POJ。这有个POJ上的ACM训练方案 http://www.java3z.com/cwbwebhome/article/article19/res041.html
 
 
