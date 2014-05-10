@@ -1,6 +1,7 @@
 
 ####
 
+*.gitignore
 *.out
 *.dSYM
 

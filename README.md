@@ -105,46 +105,46 @@ http://www.chinaunix.net/old_jh/23/437639.html
 
 ## 推荐阅读
 
- 
-《数据结构与算法分析》
-《编程之美》
-《算法设计与分析基础》
-
-《算法导论》 有哪些算法
-《算法引论》 如何创造算法   断货
-
-《剑指offer》
-
-
-*侧重经典算法的实现*
-《Elements of Programming》 STL代码 快 准 狠
-《C interfaces and Implementation》
-
-
-《微软的梦工厂》
-《Language Implementatin patterns》
-《Algorithms on Strings,Trees and Sequences》
-
-
-《writing efficient programs》  优化
-
-《Algorithm Design Manual》 红皮书
-
-《编程珠玑》Programming Pearls  偏算法理论 
-《More Programming Pearls》  偏算法轶事
-
-《The science of programming》 证明代码段的正确性   800块一本
-
-
-*高级数据结构*（如元胞自动机、斐波纳契堆、线段树）
-
-《Algorithms》 4版
-《Advanced Data Structures》 各种诡异数据结构和算法  600块
-
+  
+《数据结构与算法分析》  
+《编程之美》  
+《算法设计与分析基础》  
+  
+《算法导论》 告诉你有哪些算法  
+《算法引论》 告诉你如何创造算法   断货  
+  
+《剑指offer》  
+  
+  
+*侧重经典算法的实现*  
+《Elements of Programming》 STL代码 快 准 狠  
+《C interfaces and Implementation》  
+  
+  
+《微软的梦工厂》  
+《Language Implementatin patterns》  
+《Algorithms on Strings,Trees and Sequences》  
+  
+  
+《writing efficient programs》  优化  
+  
+《Algorithm Design Manual》 红皮书  
+  
+《编程珠玑》Programming Pearls  偏算法理论   
+《More Programming Pearls》  偏算法轶事  
+  
+《The science of programming》 证明代码段的正确性   800块一本  
+  
+  
+*高级数据结构*（如元胞自动机、斐波纳契堆、线段树）  
+   
+《Algorithms》 4版  
+《Advanced Data Structures》 各种诡异数据结构和算法  600块  
 
   
-《深入理解计算机系统》  
-《TCP/IP详解三卷》  
+    
+《深入理解计算机系统》    
+《TCP/IP详解三卷》    
 《UNIX网络编程二卷》  
 《UNIX环境高级编程：第2版》  
     
