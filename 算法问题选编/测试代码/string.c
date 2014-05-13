@@ -162,7 +162,8 @@ char first_appear_only_once(const char *source){
 // 最大对称子串的长度
 int max_symmetrical_char_length(const char *scr){
 
-
+	int max_symmetrical_length=1;
+	
 
 
 	return 0;
@@ -243,7 +244,7 @@ char *strcpy(const char *src,char *dest){
 // aabcd & bcad  ,  abc&bca
 BOOL isBrother(const char *first,const char *secd){
 
-	
+
 	return YES;
 }
 

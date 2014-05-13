@@ -117,9 +117,10 @@ http://www.chinaunix.net/old_jh/23/437639.html
   
   
 *侧重经典算法的实现*  
-《Elements of Programming》 STL代码 快 准 狠  
+《Elements of Programming》 STL代码 快 准 狠 ，写出的代码可以上层次 
 《C interfaces and Implementation》  
   
+《The practice of programming》   Brian Kernighan和Rob Pike
   
 《微软的梦工厂》  
 《Language Implementatin patterns》  
@@ -199,5 +200,8 @@ http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
 http://leetcode.com/  
 http://oj.leetcode.com/  
 http://openjudge.cn/   POJ。这有个POJ上的ACM训练方案 http://www.java3z.com/cwbwebhome/article/article19/res041.html
+http://ac.jobdu.com/index.php  九度OJ  
+  
+
 
 
