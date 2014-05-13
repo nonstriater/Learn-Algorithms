@@ -18,16 +18,17 @@
 **二叉树**  
 二叉树    
 二叉查找树  
-Trie树  
+Trie树(前缀树)
 后缀树  
+最优二叉树(赫夫曼树)  
+伸展树(splay tree 分裂树) 
 平衡二叉树AVL  
 红黑树  
 B树(B-),B+,B*  
 R树  
-最优二叉树(赫夫曼树)  
-伸展树  
   
-二叉堆  
+  
+二叉堆 （大根堆，小根堆） 
 二项树  
 二项堆  
 斐波那契堆(Fibonacci Heap)   
@@ -42,7 +43,8 @@ KMP算法
 BM算法  
   
   
-**图的算法**  
+**图的算法** 
+图的存储结构和基本操作（建立，遍历，删除节点，添加节点） 
 最小生成树  
 拓扑排序  
 关键路径  
@@ -52,36 +54,37 @@ BM算法
   
 **排序算法(八大排序)**  
 快排  
-插入排序 ： 希尔排序
-选择排序 ： 堆排序
-归并排序
-基数排序
-
-
+插入排序 ： 希尔排序  
+选择排序 ： 堆排序  
+归并排序  
+基数排序  
+  
+  
 **查找算法**  
-静态查找: 顺序表查找，有序表查找，  
-动态查找: 二叉排序树，AVL树，B- ，B+  
-哈希表：  
+顺序表查找：顺序查找
+有序表查找：二分查找
+分块查找： 块内无序，块之间有序；可以先二分查找定位到块，然后再到`块`中使用顺序查找（这里之所以叫 `动态查找表`，是因为表结构是查找的过程中动态生成的）
+动态查找:  二叉排序树，AVL树，B- ，B+  
+哈希表：  O(1)  
 
 
 
 **15个经典基础算法**
 
-A*.  
-Dijkstra.  
-DP  
-.BFS/DFS.  
-红黑树.  
-KMP  
-.遗传算法.  
+A*寻路算法： 求解最短路径 
+Dijkstra：最短路径算法 （八卦下：Dijkstra是荷兰的计算机科学家,提出”信号量和PV原语“,"解决哲学家就餐问题",”死锁“也是它提出来的）     
+DP (动态规划 dynamic programming)   
+BFS/DFS （广度/深度优先遍历）    
+红黑树 （一种自平衡的`二叉查找树`）  
+KMP    字符串匹配算法
+遗传算法
 启发式搜索.  
-图像特征提取SIFT  sift算法  
-.傅立叶变换  
-.Hash.  
+图像特征提取之SIFT算法  
+傅立叶变换  
+Hash  
 快速排序  
-.SPFA.  
-快递选择SELECT  
-  
+SPFA(shortest path faster algorithm)  单元最短路径算法  
+快递选择SELECT    
   
     
   
@@ -117,7 +120,7 @@ http://www.chinaunix.net/old_jh/23/437639.html
   
   
 *侧重经典算法的实现*  
-《Elements of Programming》 STL代码 快 准 狠 ，写出的代码可以上层次 
+《Elements of Programming》 STL代码 快 准 狠 ，写出的代码可以上层次   
 《C interfaces and Implementation》  
   
 《The practice of programming》   Brian Kernighan和Rob Pike
@@ -199,7 +202,7 @@ http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
 
 http://leetcode.com/  
 http://oj.leetcode.com/  
-http://openjudge.cn/   POJ。这有个POJ上的ACM训练方案 http://www.java3z.com/cwbwebhome/article/article19/res041.html
+http://openjudge.cn/   POJ。这有个POJ上的ACM训练方案 http://www.java3z.com/cwbwebhome/article/article19/res041.html  
 http://ac.jobdu.com/index.php  九度OJ  
   
 

@@ -163,7 +163,7 @@ char first_appear_only_once(const char *source){
 int max_symmetrical_char_length(const char *scr){
 
 	int max_symmetrical_length=1;
-	
+
 
 
 	return 0;
@@ -184,6 +184,7 @@ int continuousnum(const char *input, char *output){
 	return 0;
 
 }
+
 
 
 
