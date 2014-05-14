@@ -15,7 +15,7 @@
 
 这些算法全部自己敲一遍：
 
-**二叉树**  
+###二叉树
 二叉树    
 二叉查找树  
 Trie树(前缀树)  
@@ -34,16 +34,18 @@ R树
 斐波那契堆(Fibonacci Heap)   
   
   
-**哈希表/散列表 (Hash Table)** 
+###哈希表/散列表 (Hash Table)
   
   
-**字符串算法**  
+###字符串算法  
+
 BF算法  
 KMP算法  
 BM算法  
   
   
-**图的算法** 
+###图的算法
+
 图的存储结构和基本操作（建立，遍历，删除节点，添加节点）   
 最小生成树  
 拓扑排序  
@@ -52,15 +54,23 @@ BM算法
   
   
   
-**排序算法(八大排序)**  
-快排  
-插入排序 ： 希尔排序  
-选择排序 ： 堆排序  
+### 排序算法
+
+*交换排序算法*  
+插入排序     
+选择排序    
+希尔排序
+
+堆排序  
+快排   
 归并排序  
+
+
+*线性排序算法*
 基数排序  
   
   
-**查找算法**  
+### 查找算法  
 顺序表查找：顺序查找  
 有序表查找：二分查找  
 分块查找： 块内无序，块之间有序；可以先二分查找定位到块，然后再到`块`中顺序查找    中使用顺序查找（这里之所以叫 `动态查找表`，是因为表结构是查找的过程中动态生成的）    
@@ -69,7 +79,7 @@ BM算法
 
 
 
-**15个经典基础算法**
+###15个经典基础算法
 
 A*寻路算法： 求解最短路径 
 Dijkstra：最短路径算法 （八卦下：Dijkstra是荷兰的计算机科学家,提出”信号量和PV原语“,"解决哲学家就餐问题",”死锁“也是它提出来的）     
@@ -108,21 +118,23 @@ http://www.chinaunix.net/old_jh/23/437639.html
 
 ## 推荐阅读
 
-  
-《数据结构与算法分析》  
+ *刷题必备*  
+《剑指offer》    
 《编程之美》  
-《算法设计与分析基础》  
+《编程珠玑》Programming Pearls  偏算法理论   
+《编程珠玑(续)》    
+《More Programming Pearls》  偏算法轶事    
+    
   
+《数据结构与算法分析》    
+《算法设计与分析基础》    
 《算法导论》 告诉你有哪些算法  
 《算法引论》 告诉你如何创造算法   断货  
-  
-《剑指offer》  
   
   
 *侧重经典算法的实现*  
 《Elements of Programming》 STL代码 快 准 狠 ，写出的代码可以上层次   
 《C interfaces and Implementation》  
-  
 《The practice of programming》   Brian Kernighan和Rob Pike
   
 《微软的梦工厂》  
@@ -133,9 +145,6 @@ http://www.chinaunix.net/old_jh/23/437639.html
 《writing efficient programs》  优化  
   
 《Algorithm Design Manual》 红皮书  
-  
-《编程珠玑》Programming Pearls  偏算法理论   
-《More Programming Pearls》  偏算法轶事  
   
 《The science of programming》 证明代码段的正确性   800块一本  
   
