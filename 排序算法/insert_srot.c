@@ -126,17 +126,6 @@ void quicksort(int *a, int left, int right){
 }
 
 
-// 归并排序
-
-void merge_sort(int *a, int length){
-
-
-
-
-}
-
-
-
 // 堆排序
 
 void heap_swop(int *a,int *b){
@@ -210,34 +199,88 @@ void heap_sort(int *a, int length){
 	{
 		//交换
 		heap_swop(&a[0],&a[i]);
-		
 		//调整
 		heap_adjust(a,i);
 	}
 
 }
 
+
+
+// 归并排序
+
+// 合并2个有序数组,分配一个临时空间，装a，b的结果，最后，将合并结果拷贝到数组A，是否临时空间
+void merge_array(int *a,int size_a,int *b, int size_b){
+
+
+	int *tmp = malloc( (size_a+size_b)*sizeof(int) );
+	int i,j,k;
+	i=j=k=0;
+
+	while(i<size_a && j<size_b){
+
+		tmp[k++] = (a[i]>b[j])?b[j++]:a[i++];
+	}
+
+	while(i<size_a){
+
+		tmp[k++]=a[i++];
+	}
+
+	while(j<size_b){
+
+		tmp[k++]=b[j++];
+	}
+
+	for (int p = 0; p < k; ++p)
+	{
+		a[p] = tmp[p];
+	}
+
+	free(tmp);
+
+}
+
+
+void merge_sort(int *a, int length){
+
+
+	if (length>1)
+	{
+		
+		merge_sort(a,length/2);
+		merge_sort(a+length/2,length-length/2);
+
+		merge_array(a,length/2,a+length/2,length-length/2);
+	}
+
+
+
+}
+
+
 ///////////////////////////////////////////////
 
 
-#define Max_Number 50
+#define Max_Number 5000
 
 int main(){
 
-	int a[] = {4,87,2,32,5,2,9,49,49,23,45,2,41};
-	// 准备5000个数
-	// int a[Max_Number];
-	// for (int i = 0; i < Max_Number; ++i)
-	// {
-	// 	a[i]=rand()%Max_Number;
-	// }
+	//int a[] = {4,87,2,32,5,2,9,49,49,23,45,2,41};
+	//准备5000个数
+	int a[Max_Number];
+	for (int i = 0; i < Max_Number; ++i)
+	{
+		a[i]=rand()%Max_Number;
+	}
 
 	clock_t start,finish;
 
 	
 
 	start = clock();
-	heap_sort(a,sizeof(a)/sizeof(int));  // 有buggggggg
+	merge_sort(a,sizeof(a)/sizeof(int));    // 0.002s,可以看到，归并排序还是很快的
+	//heap_sort(a,sizeof(a)/sizeof(int));  // 有buggggggg
 	//quicksort(a,0,sizeof(a)/sizeof(int)-1); // 0.01s
 	//insert_sort(a,sizeof(a)/sizeof(int));  //  3.85s
 	//select_sort(a,sizeof(a)/sizeof(int));   // 5.3s
@@ -249,7 +292,7 @@ int main(){
 	{
 		printf("  %d  ",a[i]);
 	}
-	printf("time eclipse: %.4f sec\n", (double)(finish-start)/CLOCKS_PER_SEC); // CLOCKS_PER_SEC 1000 clock()是毫秒
+	printf("time eclipse: %.6f sec\n", (double)(finish-start)/CLOCKS_PER_SEC); // CLOCKS_PER_SEC 1000 clock()是毫秒
 
 	return 0;
 }
