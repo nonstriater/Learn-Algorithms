@@ -121,8 +121,6 @@ void quicksort(int *a, int left, int right){
 		quicksort(a,left,i-1); 
 		quicksort(a,i+1,right);
 	}
-	
-
 }
 
 
