@@ -55,7 +55,7 @@ http://archive.cnblogs.com/a/1886332/
 
 ###数据处理
 Core Data：中多线程中处理大量数据同步时的操作。
-缓存设计
+缓存设计LRU Cache
 sqlite中插入特殊字符的方法和接收到处理方法。
 
 
