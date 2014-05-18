@@ -7,9 +7,8 @@
 
   int main()
   {
-
-          printf("%s\n",h(f(1,2)));
-          //printf("%s\n",g(f(1,2)));
+          printf("%s\n",h(f(1,2))); // 
+          printf("%s\n",g(f(1,2))); // f(1,2)
           return 0;
   }
 
