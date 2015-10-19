@@ -9,8 +9,8 @@
  3. 任意节点左右子树也为二叉查找树
  4. 没有键值相等的节点
 
-
-    ```typedef int ElemType;
+    ```
+    typedef int ElemType;
     typedef struct BiSearchTree{
         ElemType key;
         struct BiSearchTree *lChild;
@@ -30,8 +30,7 @@
  
 思路一： 选左子树的最大节点，或右子树最小节点替换  
  
- 
-  
+``` 
 int bisearch_tree_delete(BiSearchTree **tree,ElemType node){
     
     if (NULL==tree) {
@@ -107,7 +106,7 @@ int bisearch_tree_delete(BiSearchTree **tree,ElemType node){
     }
         return 0;
     }
-
+```
 
 
 ## 伸展树 (splay tree)
@@ -117,29 +116,6 @@ int bisearch_tree_delete(BiSearchTree **tree,ElemType node){
 n个节点的完全二叉树，其查找，删除的复杂度都是O(logN),但是如果频繁的插入删除，导致二叉树退化成一个n个节点的单链表，也就是插入，查找复杂度趋于O(N)，为了克服这个缺点，出现了很多二叉查找树的变形，如AVL树，红黑树，以及接下来介绍的 伸展树(splay tree)
 
 
-
-## AVL树
-
-
-## 红黑树
-
-
-## Treap 树
-
-
-
-
-## B树
-
-
-
-## B+树
-
-
-## B*树
-
-
-## R树
 
 
 ## 赫夫曼编码 Huffman
@@ -273,10 +249,10 @@ double-array trie  参考作者的这篇论文 http://linux.thai.net/~thep/datri
 给你N 个互不相同的仅由一个单词构成的英文名，让你将它们按字典序从小到大排序输出
 分析：这是trie树排序的典型应用，建立N个单词的trie树，然后线序遍历整个树，就可以达到效果。  
 
+
+
   
 ## 后缀树（suffix tree）
-
-
 
 ###后缀树的应用
 
@@ -286,6 +262,28 @@ double-array trie  参考作者的这篇论文 http://linux.thai.net/~thep/datri
 2. 指定字符串S1在字符串S中出现的次数
 3. 字符串S中的最长重复子串
 4. 2个字符串的最长公共部分
+
+
+
+## AVL树
+
+
+## 红黑树
+
+
+## Treap 树
+
+
+## B树
+
+
+## B+树
+
+
+## B*树
+
+
+## R树
 
 
 
