@@ -82,7 +82,9 @@ BM算法
 ###15个经典基础算法
 
 A*寻路算法： 求解最短路径 
-Dijkstra：最短路径算法 （八卦下：Dijkstra是荷兰的计算机科学家,提出”信号量和PV原语“,"解决哲学家就餐问题",”死锁“也是它提出来的）     
+Dijkstra：最短路径算法 
+>（八卦下：Dijkstra是荷兰的计算机科学家,提出”信号量和PV原语“,"解决哲学家就餐问题",”死锁“也是它提出来的）     
+
 DP (动态规划 dynamic programming)   
 BFS/DFS （广度/深度优先遍历）    
 红黑树 （一种自平衡的`二叉查找树`）  
@@ -118,7 +120,7 @@ http://www.chinaunix.net/old_jh/23/437639.html
 
 ## 推荐阅读
 
- *刷题必备*  
+ ###刷题必备 
 《剑指offer》    
 《编程之美》  
 《编程珠玑》Programming Pearls  偏算法理论   
@@ -132,7 +134,7 @@ http://www.chinaunix.net/old_jh/23/437639.html
 《算法引论》 告诉你如何创造算法   断货  
   
   
-*侧重经典算法的实现*  
+###侧重经典算法的实现
 《Elements of Programming》 STL代码 快 准 狠 ，写出的代码可以上层次   
 《C interfaces and Implementation》  
 《The practice of programming》   Brian Kernighan和Rob Pike
@@ -149,13 +151,16 @@ http://www.chinaunix.net/old_jh/23/437639.html
 《The science of programming》 证明代码段的正确性   800块一本  
   
   
-*高级数据结构*（如元胞自动机、斐波纳契堆、线段树）  
+###高级数据结构
+
+（如元胞自动机、斐波纳契堆、线段树）  
    
 《Algorithms》 4版  
 《Advanced Data Structures》 各种诡异数据结构和算法  600块  
 
-  
-    
+ 
+### 延伸阅读 
+   
 《深入理解计算机系统》    
 《TCP/IP详解三卷》    
 《UNIX网络编程二卷》  
@@ -166,7 +171,8 @@ http://www.chinaunix.net/old_jh/23/437639.html
 ## 参考链接和学习网站
 
 
-** @ July 博客<http://blog.csdn.net/v_july_v> **  
+### July 博客
+(http://blog.csdn.net/v_july_v)
 《数学建模十大经典算法》    
 《数据挖掘领域十大经典算法》    
 《十道海量数据处理面试题》      
@@ -177,14 +183,8 @@ http://www.chinaunix.net/old_jh/23/437639.html
 程序员编程艺术 http://blog.csdn.net/v_JULY_v/article/details/6460494  
 
 
-
-https://github.com/julycoding/The-Art-Of-Programming-By-July  算法题集合
-https://github.com/activesys/libcstl   通用数据结构和算法库  
-https://github.com/nonstriater/Learn-Algorithm  算法小组
-
   
-  
-贝叶斯：  
+### 贝叶斯 
 1. 阮一峰总结的这两篇《贝叶斯推断及其互联网应用》   
 http://www.ruanyifeng.com/blog/2011/08/bayesian_inference_part_one.html  
 http://www.ruanyifeng.com/blog/2011/08/bayesian_inference_part_two.html  
@@ -197,17 +197,20 @@ http://mindhacks.cn/2008/09/21/the-magical-bayesian-method/
   
 这4部分看完后，就能自己推贝叶斯、朴素贝叶斯，还能了解各种常见概率、集合论等，实际上对应用贝叶斯已经可以打好基础了。  
   
-  
-MYSQL 背后的数据结构和算法 http://blogread.cn/it/article/4088?f=wb2  
-  
-  
-**基本算法演示**  
+
+https://github.com/julycoding/The-Art-Of-Programming-By-July  算法题集合
+https://github.com/activesys/libcstl   通用数据结构和算法库  
+https://github.com/nonstriater/Learn-Algorithm  算法小组
+http://blogread.cn/it/article/4088?f=wb2   MYSQL 背后的数据结构和算法
+
+
+###基本算法演示 
 http://sjjg.js.zwu.edu.cn/SFXX/sf1/sfys.html  
 http://www.cs.usfca.edu/~galles/visualization/Algorithms.html  
   
   
    
-**编程网站**
+###编程网站
 
 http://leetcode.com/  
 http://oj.leetcode.com/  
