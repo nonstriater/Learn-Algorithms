@@ -57,6 +57,7 @@ BM算法
 ### 排序算法
 
 **交换排序算法**
+
 插入排序    
 选择排序    
 希尔排序
@@ -67,6 +68,7 @@ BM算法
 
 
 **线性排序算法**
+  
 基数排序  
   
   
@@ -201,7 +203,7 @@ http://mindhacks.cn/2008/09/21/the-magical-bayesian-method/
 
 https://github.com/julycoding/The-Art-Of-Programming-By-July  算法题集合
 https://github.com/activesys/libcstl   通用数据结构和算法库  
-https://github.com/nonstriater/Learn-Algorithm  算法小组
+https://github.com/nonstriater/Learn-Algorithm  算法小组  
 http://blogread.cn/it/article/4088?f=wb2   MYSQL 背后的数据结构和算法
 
 
