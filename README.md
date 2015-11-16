@@ -122,15 +122,15 @@ http://www.chinaunix.net/old_jh/23/437639.html
 
 ## 推荐阅读
 
- ###刷题必备  
+
+###刷题必备  
 
 《剑指offer》    
 《编程之美》  
 《编程珠玑》Programming Pearls  偏算法理论   
 《编程珠玑(续)》    
 《More Programming Pearls》  偏算法轶事    
-    
-  
+      
 《数据结构与算法分析》    
 《算法设计与分析基础》    
 《算法导论》 告诉你有哪些算法  
@@ -156,7 +156,7 @@ http://www.chinaunix.net/old_jh/23/437639.html
   
 ###高级数据结构
 
-（如元胞自动机、斐波纳契堆、线段树）  
+如元胞自动机、斐波纳契堆、线段树
    
 《Algorithms》 4版  
 《Advanced Data Structures》 各种诡异数据结构和算法  600块  
@@ -174,8 +174,7 @@ http://www.chinaunix.net/old_jh/23/437639.html
 ## 参考链接和学习网站
 
 
-### July 博客
-(http://blog.csdn.net/v_july_v)
+### July 博客 (http://blog.csdn.net/v_july_v) 
 《数学建模十大经典算法》    
 《数据挖掘领域十大经典算法》    
 《十道海量数据处理面试题》      
