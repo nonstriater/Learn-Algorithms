@@ -9,6 +9,7 @@
 3） 加入算法学习社区，相互鼓励学习   
 4） 看经典书籍  
   
+>如果你想为改项目贡献点什么,可以先加我个人微信:tiger-ran
 
 
 ##基本数据结构和算法
@@ -219,6 +220,10 @@ http://oj.leetcode.com/
 http://openjudge.cn/   POJ。这有个POJ上的ACM训练方案 http://www.java3z.com/cwbwebhome/article/article19/res041.html  
 http://ac.jobdu.com/index.php  九度OJ  
   
+
+## 联系
+
+[@移动开发小冉](http://weibo.com/ranwj)
 
 
 
