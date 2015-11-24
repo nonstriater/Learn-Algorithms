@@ -9,7 +9,7 @@
 3） 加入算法学习社区，相互鼓励学习   
 4） 看经典书籍  
   
->如果你想为改项目贡献点什么,可以先加我个人微信:tiger-ran
+>如果你想为该项目贡献点什么,可以先加我个人微信:tiger-ran，非诚勿扰~：)
 
 
 ##基本数据结构和算法
@@ -201,7 +201,7 @@ http://mindhacks.cn/2008/09/21/the-magical-bayesian-method/
 这4部分看完后，就能自己推贝叶斯、朴素贝叶斯，还能了解各种常见概率、集合论等，实际上对应用贝叶斯已经可以打好基础了。  
   
 
-https://github.com/julycoding/The-Art-Of-Programming-By-July  算法题集合
+https://github.com/julycoding/The-Art-Of-Programming-By-July  算法题集合       
 https://github.com/activesys/libcstl   通用数据结构和算法库  
 https://github.com/nonstriater/Learn-Algorithm  算法小组  
 http://blogread.cn/it/article/4088?f=wb2   MYSQL 背后的数据结构和算法
