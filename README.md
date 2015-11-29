@@ -8,7 +8,8 @@
 2. 看算法源码   
 3. 加入算法学习社区，相互鼓励学习   
 4. 看经典书籍  
-  
+5. 刷题   
+
 >如果你想为该项目贡献点什么,可以先加我个人微信:tiger-ran，非诚勿扰~：)
 
 
@@ -85,7 +86,8 @@
 
 * A*寻路算法： 求解最短路径 
 * Dijkstra：最短路径算法 
->（八卦下：Dijkstra是荷兰的计算机科学家,提出”信号量和PV原语“,"解决哲学家就餐问题",”死锁“也是它提出来的）     
+>（八卦下：Dijkstra是荷兰的计算机科学家,提出”信号量和PV原语“,"解决哲学家就餐问题",”死锁“也是它提出来的） 
+
 * DP (动态规划 dynamic programming)   
 * BFS/DFS （广度/深度优先遍历）    
 * 红黑树 （一种自平衡的`二叉查找树`）  
@@ -122,21 +124,24 @@ http://www.chinaunix.net/old_jh/23/437639.html
 ## 推荐阅读
 
 
-###刷题必备  
+### 刷题必备  
 
 《剑指offer》    
-《编程之美》  
+《编程之美》 
+《结构之法:面试和算法心得》
+
+### 基础
 《编程珠玑》Programming Pearls  偏算法理论   
 《编程珠玑(续)》    
-《More Programming Pearls》  偏算法轶事    
-      
+
 《数据结构与算法分析》    
 《算法设计与分析基础》    
 《算法导论》 告诉你有哪些算法  
-《算法引论》 告诉你如何创造算法   断货  
-  
-  
+《算法引论》 告诉你如何创造算法   断货    
+《More Programming Pearls》  偏算法轶事  
+
 ###侧重经典算法的实现
+
 《Elements of Programming》 STL代码 快 准 狠 ，写出的代码可以上层次   
 《C interfaces and Implementation》  
 《The practice of programming》   Brian Kernighan和Rob Pike
@@ -145,17 +150,14 @@ http://www.chinaunix.net/old_jh/23/437639.html
 《Language Implementatin patterns》  
 《Algorithms on Strings,Trees and Sequences》  
   
-  
 《writing efficient programs》  优化  
-  
 《Algorithm Design Manual》 红皮书  
-  
 《The science of programming》 证明代码段的正确性   800块一本  
   
   
 ###高级数据结构
 
-如元胞自动机、斐波纳契堆、线段树
+>如元胞自动机、斐波纳契堆、线段树
    
 《Algorithms》 4版  
 《Advanced Data Structures》 各种诡异数据结构和算法  600块  
