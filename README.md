@@ -126,42 +126,28 @@ http://www.chinaunix.net/old_jh/23/437639.html
 
 ### 刷题必备  
 
-《剑指offer》    
+《剑指offer》
 《编程之美》 
 《结构之法:面试和算法心得》
 
 ### 基础
-《编程珠玑》Programming Pearls  偏算法理论   
-《编程珠玑(续)》    
 
-《数据结构与算法分析》    
+《编程珠玑》Programming Pearls   
+《编程珠玑(续)》
+《数据结构与算法分析》 
+《Algorithms》 这本近千页的书只有6章,其中四章分别是排序，查找，图，字符串，足见简介细致     
+
+### 算法设计 
+
 《算法设计与分析基础》    
-《算法导论》 告诉你有哪些算法  
-《算法引论》 告诉你如何创造算法   断货    
-《More Programming Pearls》  偏算法轶事  
+《算法引论》 告诉你如何创造算法   断货        
+《Algorithm Design Manual》算法设计手册 红皮书  
 
-###侧重经典算法的实现
-
-《Elements of Programming》 STL代码 快 准 狠 ，写出的代码可以上层次   
-《C interfaces and Implementation》  
-《The practice of programming》   Brian Kernighan和Rob Pike
-  
-《微软的梦工厂》  
-《Language Implementatin patterns》  
+《算法导论》 是一本对算法介绍比较全面的经典书籍   
+     
 《Algorithms on Strings,Trees and Sequences》  
+《Advanced Data Structures》 各种诡异高级的数据结构和算法 如元胞自动机、斐波纳契堆、线段树  600块    
   
-《writing efficient programs》  优化  
-《Algorithm Design Manual》 红皮书  
-《The science of programming》 证明代码段的正确性   800块一本  
-  
-  
-###高级数据结构
-
->如元胞自动机、斐波纳契堆、线段树
-   
-《Algorithms》 4版  
-《Advanced Data Structures》 各种诡异数据结构和算法  600块  
-
  
 ### 延伸阅读 
    
@@ -170,47 +156,32 @@ http://www.chinaunix.net/old_jh/23/437639.html
 《UNIX网络编程二卷》  
 《UNIX环境高级编程：第2版》  
     
- 
-  
+     
+《The practice of programming》   Brian Kernighan和Rob Pike
+《writing efficient programs》  优化 
+《The science of programming》 证明代码段的正确性   800块一本  
+
+
 ## 参考链接和学习网站
 
+### [July 博客](http://blog.csdn.net/v_july_v) 
 
-### July 博客 (http://blog.csdn.net/v_july_v) 
 《数学建模十大经典算法》    
 《数据挖掘领域十大经典算法》    
 《十道海量数据处理面试题》      
 《数字图像处理领域的二十四个经典算法》    
 《精选微软等公司经典的算法面试100题》 
 
-微软面试100题 http://blog.csdn.net/column/details/ms100.html  
-程序员编程艺术 http://blog.csdn.net/v_JULY_v/article/details/6460494  
 
-
-  
-### 贝叶斯 
-1. 阮一峰总结的这两篇《贝叶斯推断及其互联网应用》   
-http://www.ruanyifeng.com/blog/2011/08/bayesian_inference_part_one.html  
-http://www.ruanyifeng.com/blog/2011/08/bayesian_inference_part_two.html  
-2. 算法杂货铺——分类算法之朴素贝叶斯分类(Naive Bayesian classification)  
-http://www.cnblogs.com/leoo2sk/archive/2010/09/17/naive-bayesian-classifier.html  
-3. 朴素贝叶斯（NB,Naive Bayes)简介  
-http://home.cnblogs.com/group/topic/40112.html  
-4. 数学之美番外篇：平凡而又神奇的贝叶斯方法  
-http://mindhacks.cn/2008/09/21/the-magical-bayesian-method/  
-  
-这4部分看完后，就能自己推贝叶斯、朴素贝叶斯，还能了解各种常见概率、集合论等，实际上对应用贝叶斯已经可以打好基础了。  
-  
-
-https://github.com/julycoding/The-Art-Of-Programming-By-July  算法题集合       
-https://github.com/activesys/libcstl   通用数据结构和算法库  
-https://github.com/nonstriater/Learn-Algorithm  算法小组  
-http://blogread.cn/it/article/4088?f=wb2   MYSQL 背后的数据结构和算法
+[The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July) 
+[微软面试100题](http://blog.csdn.net/column/details/ms100.html)
+[程序员编程艺术](http://blog.csdn.net/v_JULY_v/article/details/6460494)
 
 
 ###基本算法演示 
+
 http://sjjg.js.zwu.edu.cn/SFXX/sf1/sfys.html  
 http://www.cs.usfca.edu/~galles/visualization/Algorithms.html  
-  
   
    
 ###编程网站
