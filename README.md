@@ -132,8 +132,8 @@ http://www.chinaunix.net/old_jh/23/437639.html
 ### 基础
 
 《编程珠玑》Programming Pearls   
-《编程珠玑(续)》  
-《数据结构与算法分析》  
+《编程珠玑(续)》   
+《数据结构与算法分析》   
 《Algorithms》 这本近千页的书只有6章,其中四章分别是排序，查找，图，字符串，足见简介细致     
 
 ### 算法设计 
@@ -144,7 +144,7 @@ http://www.chinaunix.net/old_jh/23/437639.html
 
 《算法导论》 是一本对算法介绍比较全面的经典书籍   
      
-《Algorithms on Strings,Trees and Sequences》  
+《Algorithms on Strings,Trees and Sequences》    
 《Advanced Data Structures》 各种诡异高级的数据结构和算法 如元胞自动机、斐波纳契堆、线段树  600块    
   
  
@@ -156,9 +156,9 @@ http://www.chinaunix.net/old_jh/23/437639.html
 《UNIX环境高级编程：第2版》  
     
      
-《The practice of programming》   Brian Kernighan和Rob Pike
-《writing efficient programs》  优化 
-《The science of programming》 证明代码段的正确性   800块一本  
+《The practice of programming》   Brian Kernighan和Rob Pike    
+《writing efficient programs》  优化   
+《The science of programming》 证明代码段的正确性   800块一本   
 
 
 ## 参考链接和学习网站
@@ -172,9 +172,9 @@ http://www.chinaunix.net/old_jh/23/437639.html
 《精选微软等公司经典的算法面试100题》 
 
 
-[The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July) 
-[微软面试100题](http://blog.csdn.net/column/details/ms100.html)
-[程序员编程艺术](http://blog.csdn.net/v_JULY_v/article/details/6460494)
+[The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July)   
+[微软面试100题](http://blog.csdn.net/column/details/ms100.html)   
+[程序员编程艺术](http://blog.csdn.net/v_JULY_v/article/details/6460494)   
 
 
 ###基本算法演示 
