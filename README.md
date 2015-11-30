@@ -39,11 +39,12 @@
   
 ###字符串算法  
 
-* BF算法  
-* KMP算法  
-* BM算法  
-  
-  
+* 排序
+* 查找
+    * BF算法  
+    * KMP算法  
+    * BM算法  
+    
 ###图的算法
 
 * 图的存储结构和基本操作（建立，遍历，删除节点，添加节点）   
@@ -199,7 +200,9 @@ http://ac.jobdu.com/index.php  九度OJ
 
 **局部变量** 尽量短，能表达清楚意思即可，能简写就简写，比如"err" 表示 "error"; "fd" 表示文件描述符 ，循环变量可以使用i,j,k ;结构体成员变量不需要"m_"前缀;全局变量"g_"开头
 
-**常量名/宏定义** 全大写，单词之间"_"分割，如 "MAX_NUMBER_OF_SLAB_CLASSES" ;对于options 宏定义，适当使用前缀 ，比如：
+**常量名** 全大写，单词之间"_"分割，如 "MAX_NUMBER_OF_SLAB_CLASSES" ;
+
+**宏定义** 对于options 宏定义，适当使用前缀 ，比如：
 ```
 /* Client classes for client limits, currently used only for
  * the max-client-output-buffer limit implementation. */
@@ -210,7 +213,7 @@ http://ac.jobdu.com/index.php  九度OJ
 #define CLIENT_TYPE_OBUF_COUNT 3 
 ```
 
-枚举使用前缀:
+**枚举** 使用前缀:
 ```
 enum conn_states {
     conn_listening,  /**< the socket which listens for connections */
