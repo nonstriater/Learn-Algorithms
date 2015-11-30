@@ -225,12 +225,12 @@
 
 接下来，我们看一组排序的动画，你看看能不能猜到他们使用了什么排序算法完成。
 
-[](./quicksort.gif)
-[](./quicksort.gif)
-[](./quicksort.gif)
-[](./quicksort.gif)
-[](./quicksort.gif)
-[](./quicksort.gif)
+![](./quicksort.gif)
+![](./mergesort.gif)
+![](./heapsort.gif)
+![](./selectsort.gif)
+![](./bubblesort.gif)
+![](./shellsort.gif)
 
 
 ## 3种线性排序算法
