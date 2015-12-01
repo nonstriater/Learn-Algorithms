@@ -206,7 +206,7 @@ DP通常基于一个递推公式及一个(或多个)初始状态，当前子问�
 
 ## 参考
 
-《算法设计与分析基础》 Anany Levitin
+《算法设计与分析基础》 Anany Levitin   
 http://www.chinaunix.net/old_jh/23/437639.html
 
 
