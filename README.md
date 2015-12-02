@@ -197,11 +197,12 @@ http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
    
 ###编程网站
 
-http://leetcode.com/  
-http://oj.leetcode.com/  
-http://openjudge.cn/   POJ。这有个POJ上的ACM训练方案 http://www.java3z.com/cwbwebhome/article/article19/res041.html  
-http://ac.jobdu.com/index.php  九度OJ  
+http://leetcode.com/    
+http://openjudge.cn/  开放在线程序评测平台，可以床架自己的OJ小组  
+http://ac.jobdu.com/index.php  九度OJ   
   
+这有个ACM训练方案 http://www.java3z.com/cwbwebhome/article/article19/res041.html   
+
 
 ## 补充:C语言代码规范
 
