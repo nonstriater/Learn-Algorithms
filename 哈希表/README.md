@@ -21,6 +21,22 @@ for (int i=0;i<s.length();i++){
 }
 ```
 
+还有，比如下面的：
+
+```
+Hash hashCode(char *key){
+	int offset = 5;
+	Hash hashCode = 0;
+	while(*key){
+		hashCode = (hashCode << offset) + *key++;
+	}
+	return hashCode;		
+}
+```
+
+使用时 `hashCode(key) & (size-1) ` 就可以得到一个 `size-1` 范围内的hash值
+
+
 当然，还有其他的散列函数，如`平方取中法`, `随机数法`等。
 
 ### 碰撞解决
