@@ -16,7 +16,7 @@
 ```
 8位的电话号码，最多有99 999 999个
 IP地址
-
+1G内存，2^32 ,差不多40亿，40亿Byte*8 = 320亿 bit
 
 ```
 
@@ -104,34 +104,32 @@ Bloom Filter是由Bloom在1970年提出的一种多哈希函数映射的快速�
 
 ##### Bloom filter 算法
 
-Bloom filter可以看做是对bitmap的扩展。只是使用多个hash映射函数，从而减低hash发生冲突的概率。算法如下』
+Bloom filter可以看做是对bitmap的扩展。只是使用多个hash映射函数，从而减低hash发生冲突的概率。算法如下:
 
 1. 创建 m 位的bitset，初始化为0， 选中k个不同的哈希函数
 2. 第 i 个hash 函数对字符串str 哈希的结果记为 h(i,str) ,范围是（0，m-1）
 3. 将字符串记录到bitset的过程：对于一个字符串str,分别记录h(1,str),h(2,str)...,h(k,str)。 然后将bitset的h(1,str),h(2,str)...,h(k,str)位置1。也就是将一个str映射到bitset的 k 个二进制位。
 
-4. 检查字符串是否存在:对于字符串str，分别计算h(1，str)、h(2，str),...,h(k，str)。然后检查BitSet的第h(1，str)、h(2，str),...,h(k，str) 位是否为1，若其中任何一位不为1则可以判定str一定没有被记录过。若全部位都是1，则“认为”字符串str存在。
-
-但是若一个字符串对应的Bit全为1，实际上是不能100%的肯定该字符串被Bloom Filter记录过的。（因为有可能该字符串的所有位都刚好是被其他字符串所对应）这种将该字符串划分错的情况，称为false positive 。
+4. 检查字符串是否存在:对于字符串str，分别计算h(1，str)、h(2，str),...,h(k，str)。然后检查BitSet的第h(1，str)、h(2，str),...,h(k，str) 位是否为1，若其中任何一位不为1则可以判定str一定没有被记录过。若全部位都是1，则“认为”字符串str存在。但是若一个字符串对应的Bit全为1，实际上是不能100%的肯定该字符串被Bloom Filter记录过的。（因为有可能该字符串的所有位都刚好是被其他字符串所对应）这种将该字符串划分错的情况，称为false positive 。
 
 5. 删除字符串:字符串加入了就被不能删除了，因为删除会影响到其他字符串。实在需要删除字符串的可以使用Counting bloomfilter(CBF)。
 
 
-`Bloom Filter使用了k个哈希函数，每个字符串跟k个bit对应。从而降低了冲突的概率。`
+`Bloom Filter 使用了k个哈希函数，每个字符串跟k个bit对应。从而降低了冲突的概率。`
 
 
 
-##### 最优的哈希函数个数
+##### 最优的哈希函数个数，位数组m大小
 
 哈希函数的选择对性能的影响应该是很大的，一个好的哈希函数要能近似等概率的将字符串映射到各个Bit。选择k个不同的哈希函数比较麻烦，一种简单的方法是选择一个哈希函数，然后送入k个不同的参数。
 
+在原始个数位n时，那这里的k应该取多少呢？位数组m大小应该取多少呢？这里有个计算公式:`k=(ln2)*(m/n)`, 当满足这个条件时，错误率最小。
+
+
+假设错误率为0.01， 此时m 大概是 n 的13倍，k大概是8个。 这里的n是元素记录的个数，m是bit位个数。如果每个元素的长度原大于13，使用Bloom Filter就可以节省内存。
+
 
 ##### 错误率估计
-
-
-
-##### 位数组的大小
-
 
 
 
@@ -153,7 +151,7 @@ int hashcode(int cap,int seed, string key){
 }
 ```
 
-对每个字符串str求哈希就可以使用 `hashcode(SIZE*8,seeds[i],str)` ,i的取值范围就是 （0，k）。
+对每个字符串str求哈希就可以使用 `hashcode(SIZE*8,seeds[i],str)` ,i 的取值范围就是 （0，k）。
 
 
 ##### Bloom filter应用 
@@ -165,17 +163,141 @@ int hashcode(int cap,int seed, string key){
 
 ##### 参考  
 http://www.cnblogs.com/heaad/archive/2011/01/02/1924195.html
-http://blog.csdn.net/jiaomeng/article/details/1495500
+http://blog.csdn.net/jiaomeng/article/details/1495500  
 http://pages.cs.wisc.edu/~cao/papers/summary-cache/node8.html  `哈希函数个数k、位数组大小m` 测试论证
 
 
 ### Trie树
 
+字典树，英文名Trie树，Trie一词来自retrieve，发音为/tri:/ “tree”，也有人读为/traɪ/ “try”，
+又称单词查找树，Trie树，是一种树形结构（多叉树）。
 
+trie，又称为前缀树或字典树，是一种有序树，用于保存关联数组。
+
+##### trie基本
+
+1. 除根节点不包含字符，每个节点都包含一个字符
+2. 从根节点到某一个节点，路径上经过的字符连接起来，为该节点对应的字符串
+3. 每个节点的所有子节点包含的字符都不相同（保证每个节点对应的字符串都不一样）
+
+比如：
+
+```
+                    / \    
+                   / | \
+                  t  a  i                
+                /  \     \
+               o    e     n
+                   /|\    /
+                  a d n  n                
+```
+
+上面的Trie树，可以表示字符串集合{“a”, “to”, “tea”, “ted”, “ten”, “i”, “in”, “inn”} 。
+
+trie树把每个关键字保存在一条路径上，而不是一个节点中  
+两个有公共前缀的关键字，在Trie树中前缀部分的路径相同，所以Trie树又叫做前缀树（Prefix Tree）。  
+
+
+##### trie树存储结构和基本操作
+
+最简单实现 ---- 26个字母表 a-z (没有考虑数字，大小写，其他字符如=-*/)
+
+子树用数组存储，浪费空间；如果系统中存在大量字符串，且这些字符串基本没有公共前缀，trie树将消耗大量内存  
+如果用链表存储，查询时需要遍历链表，查询效率有所降低  
+
+```
+define ALPHABET_NUM 26
+typedef struct trie_node{
+   char value;
+   bool isKey;/*是否代表一个关键字*/
+   int count; /*可用于词频统计，表示关键字出现的次数*/
+   struct Node *subTries[ALPHABET];
+}*Trie
+
+Trie Trie_create();
+int Trie_insert(Trie trie,char *word); // 插入一个单词
+int Trie_search(Trie trie,char *word);// 查找一个单词
+int Trie_delete(Trie trie,char *word);// 删除一个单词
+
+Trie Trie_create(){
+    trie_node* pNode = new trie_node();
+    pNode->count = 0;
+    for(int i=0; i<ALPHABET_SIZE; ++i)
+        pNode->children[i] = NULL;
+    return pNode;
+}
+
+void trie_insert(trie root, char* key)
+{
+    trie_node* node = root;
+    char* p = key;
+    while(*p)
+    {
+        if(node->children[*p-'a'] == NULL)
+        {
+            node->children[*p-'a'] = create_trie_node();
+        }
+        node = node->children[*p-'a'];
+        ++p;
+    }
+    node->count += 1;
+}
+
+/**
+ * 查询：不存在返回0，存在返回出现的次数
+ */ 
+int trie_search(trie root, char* key)
+{
+    trie_node* node = root;
+    char* p = key;
+    while(*p && node!=NULL)
+    {
+        node = node->children[*p-'a'];
+        ++p;
+    }
+    
+    if(node == NULL)
+        return 0;
+    else
+        return node->count;
+}
+
+```
+
+trie树的增加和删除都比较麻烦，但索引本身就是写少读多，是否考虑添加删除的复杂度上升，依靠具体场景决定。  
+
+
+##### trie 问题
+
+它的优点是： 
+
+1. 插入和查询的效率很高，都是O(m),其中 m 是待插入/查询的字符串的长度
+2. Trie树可以对关键字按字典序排序  
+3. 利用字符串的公共前缀来最大限度地减少无谓的字符串比较,提高查询效率
+
+缺点：
+
+1. trie 树比较费内存空间，在处理大数据时会内存吃紧
+2. 当hash函数较好时，Hash查询效率比 trie 更优
+
+[知乎这里](http://www.zhihu.com/question/27168319)有个问题：`10万个串找给定的串是否存在`, 对trie和hash两种方案给出了讨论。 
+
+
+[DATrie](https://github.com/kmike/datrie) 是使用python实现的双数组trie树， 双数组可以减少内存的使用量  。有关 double-array trie，可以参考[这篇论文](http://linux.thai.net/~thep/datrie/datrie.html)
+  
+
+##### trie应用
+
+典型应用是：前缀查询,字符串查询，排序  
+  
+* 用于统计，排序和保存大量的字符串（但不仅限于字符串）  
+* 经常被搜索引擎系统用于文本词频统计  
+* 排序大量字符串   
+* 用于索引结构  
+* 敏感词过滤
 
 
 ### 数据库索引
-
 
 
 
