@@ -58,6 +58,7 @@ SVM
 学好python
 
 
+http://julyedu.com/course/getDetail?course_id=34#discard julyedu 课程大纲
 
 
 ### 数据挖掘
