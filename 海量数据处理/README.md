@@ -162,8 +162,8 @@ int hashcode(int cap,int seed, string key){
 
 
 ##### 参考  
-http://www.cnblogs.com/heaad/archive/2011/01/02/1924195.html
-http://blog.csdn.net/jiaomeng/article/details/1495500  
+http://www.cnblogs.com/heaad/archive/2011/01/02/1924195.html  
+http://blog.csdn.net/jiaomeng/article/details/1495500    
 http://pages.cs.wisc.edu/~cao/papers/summary-cache/node8.html  `哈希函数个数k、位数组大小m` 测试论证
 
 
@@ -298,6 +298,8 @@ trie树的增加和删除都比较麻烦，但索引本身就是写少读多，�
 
 
 ### 数据库索引
+
+数据库索引一般使用B树(B+树，RB树)实现。
 
 
 
