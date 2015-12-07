@@ -53,14 +53,12 @@ PAC学习理论（PAC Learning）
 聚类
 模式识别
 
-
-
 SVM
 贝叶斯
 
+
+
 学好python
-
-
 http://julyedu.com/course/getDetail?course_id=34#discard julyedu 课程大纲
 
 
