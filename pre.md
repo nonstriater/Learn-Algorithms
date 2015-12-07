@@ -13,23 +13,26 @@
 ### 机器学习
 
 从大量数据中找到规律和知识，然后用规律和知识做决策。
+机器学习偏向数学问题推导，数据挖掘就是抽特征
+不要沉迷于数学公式推导，理解如何运用数据
 
 
 分类器
-	Naive Bayes
-	Linear Discriminant Analysis
-	Logistic Regression
-	Linear SVM
-	Kernel SVM
-	Adaboost
-	Decision
-	Neural network
+
+*	Naive Bayes
+*	Linear Discriminant Analysis
+*	Logistic Regression
+*	Linear SVM
+*	Kernel SVM
+*	Adaboost
+*	Decision
+*	Neural network
 
 
 非监督模型
-	数据处理与可视化：PCA，LDA，MDS
-	聚类算法
-	稀疏编码
+*	数据处理与可视化：PCA，LDA，MDS
+*	聚类算法
+*	稀疏编码
 
 
 基本不会去实现这些基础算法，都有现成的开源工具
@@ -45,13 +48,12 @@ PAC学习理论（PAC Learning）
 参考链接：http://www.zhihu.com/question/21714701
 
 
+
 分类
 聚类
 模式识别
 
 
-机器学习偏向数学问题推导，数据挖掘就是抽特征
-不要沉迷于数学公式推导，理解如何运用数据
 
 SVM
 贝叶斯
