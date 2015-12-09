@@ -60,6 +60,10 @@ SVM
 
 学好python
 
+coursera公开课
+Andrew Ng
+
+
 
 http://julyedu.com/course/getDetail?course_id=34#discard julyedu 课程大纲
 

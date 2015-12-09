@@ -282,7 +282,6 @@ trie树的增加和删除都比较麻烦，但索引本身就是写少读多，�
 
 [知乎这里](http://www.zhihu.com/question/27168319)有个问题：`10万个串找给定的串是否存在`, 对trie和hash两种方案给出了讨论。 
 
-
 [DATrie](https://github.com/kmike/datrie) 是使用python实现的双数组trie树， 双数组可以减少内存的使用量  。有关 double-array trie，可以参考[这篇论文](http://linux.thai.net/~thep/datrie/datrie.html)
   
 
@@ -299,7 +298,7 @@ trie树的增加和删除都比较麻烦，但索引本身就是写少读多，�
 
 ### 数据库索引
 
-数据库索引一般使用B树(B+树，RB树)实现。
+数据库索引一般使用B树(B+树，R树)实现。
 
 
 
