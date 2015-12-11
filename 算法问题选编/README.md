@@ -76,12 +76,16 @@
 
 海量处理问题常用的分析解决问题的思路是：
 
-* 分而治之/Hash映射 + hash统计/trie树/红黑树/二叉搜索树 + 堆排序/快速排序/归并排序
+* Hash映射/分而治之
+* Bitmap
+* Bloom filter(布隆过滤器)
+* Trie树
+* 数据库索引
+* 倒排索引(Inverted Index)
 * 双层桶划分
-* Bloom filter 、Bitmap
-* Trie树/数据库/倒排索引
 * 外排序
-* 分布处理之 Hadoop/Mapreduce
+* simhash算法
+* 分布处理之Mapreduce
 
 
 ### 智力思维训练

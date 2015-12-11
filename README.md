@@ -113,12 +113,16 @@
 
 ## 海量数据处理
 
-* 分而治之/Hash映射 + hash统计/trie树/红黑树/二叉搜索树 + 堆排序/快速排序/归并排序
+* Hash映射/分而治之
+* Bitmap
+* Bloom filter(布隆过滤器)
+* Trie树
+* 数据库索引
+* 倒排索引(Inverted Index)
 * 双层桶划分
-* Bloom filter 、Bitmap
-* Trie树/数据库/倒排索引
 * 外排序
-* 分布处理之 Hadoop/Mapreduce
+* simhash算法
+* 分布处理之Mapreduce
 
 
 ## 算法设计思想
@@ -140,13 +144,14 @@
 《剑指offer》  
 《编程之美》  
 《结构之法:面试和算法心得》  
+《算法谜题》 都是思维题 
 
 ### 基础
 
 《编程珠玑》Programming Pearls   
 《编程珠玑(续)》   
 《数据结构与算法分析》   
-《Algorithms》 这本近千页的书只有6章,其中四章分别是排序，查找，图，字符串，足见简介细致     
+《Algorithms》 这本近千页的书只有6章,其中四章分别是排序，查找，图，字符串，足见介绍细致     
 
 ### 算法设计 
 
