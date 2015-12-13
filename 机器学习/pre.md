@@ -60,12 +60,10 @@ SVM
 
 学好python
 
-coursera公开课
-Andrew Ng
 
+[Machine learning](https://www.coursera.org/learn/machine-learning/) Andrew Ng 在 coursera公开课
 
-
-http://julyedu.com/course/getDetail?course_id=34#discard julyedu 课程大纲
+[julyedu 课程大纲](http://julyedu.com/course/getDetail?course_id=34#discard)
 
 
 ### 数据挖掘
