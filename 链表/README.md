@@ -18,7 +18,7 @@
 ```
 typedef int Value
 typedef struct Entry{
-	struct Entry *next,prev;
+	struct Entry *next,*prev;
 	Value value;
 }DoubleLink;
 

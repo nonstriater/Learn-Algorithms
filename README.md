@@ -231,7 +231,7 @@ http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
 ### 编程网站
 
 [leetcode](http://leetcode.com/)    
-[openjudge]http://openjudge.cn/  开放在线程序评测平台，可以床架自己的OJ小组  
+[openjudge](http://openjudge.cn/)  开放在线程序评测平台，可以床架自己的OJ小组  
 [九度OJ](http://ac.jobdu.com/index.php)     
   
 这有个[ACM训练方案](http://www.java3z.com/cwbwebhome/article/article19/res041.html)   
