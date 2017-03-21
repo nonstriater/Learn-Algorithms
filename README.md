@@ -3,7 +3,7 @@
 
 这里的内容是我学习算法过程的一些记录，希望能一直坚持下去。
 
-##学习方法
+## 学习方法
  
 * 把所有经典算法写一遍  
 * 看算法有关源码   
@@ -12,7 +12,7 @@
 * 刷题   
 
 
-##基本数据结构和算法
+## 基本数据结构和算法
 
 这些算法全部自己敲一遍：
 
@@ -20,6 +20,22 @@
 
 * 链表
 * 双向链表
+ 
+### 哈希表/散列表 (Hash Table)
+
+* 散列函数
+* 碰撞解决
+
+### 字符串算法  
+
+* 排序
+* 查找
+    * BF算法  
+    * KMP算法  
+    * BM算法  
+* 正则表达式
+* 数据压缩
+
 
 ### 二叉树
 
@@ -38,24 +54,8 @@
 * 二项堆  
 * 斐波那契堆(Fibonacci Heap)   
 
-  
-###哈希表/散列表 (Hash Table)
 
-* 散列函数
-* 碰撞解决
-
-###字符串算法  
-
-* 排序
-* 查找
-    * BF算法  
-    * KMP算法  
-    * BM算法  
-* 正则表达式
-* 数据压缩
-
-    
-###图的算法
+### 图的算法
 
 * 图的存储结构和基本操作（建立，遍历，删除节点，添加节点）   
 * 最小生成树  
@@ -91,7 +91,7 @@
 * 哈希表：  O(1)     
 
 
-###15个经典基础算法
+### 15个经典基础算法
 
 * Hash  
 * 快速排序 
@@ -129,7 +129,6 @@
 * 迭代法  
 * 穷举搜索法  
 * 递推法  
-* 
 * 动态规划  
 * 贪心算法  
 * 回溯  
@@ -223,19 +222,19 @@
 [程序员编程艺术](http://blog.csdn.net/v_JULY_v/article/details/6460494)   
 
 
-###基本算法演示 
+### 基本算法演示 
 
 http://sjjg.js.zwu.edu.cn/SFXX/sf1/sfys.html  
 http://www.cs.usfca.edu/~galles/visualization/Algorithms.html  
   
    
-###编程网站
+### 编程网站
 
-http://leetcode.com/    
-http://openjudge.cn/  开放在线程序评测平台，可以床架自己的OJ小组  
-http://ac.jobdu.com/index.php  九度OJ   
+[leetcode](http://leetcode.com/)    
+[openjudge]http://openjudge.cn/  开放在线程序评测平台，可以床架自己的OJ小组  
+[九度OJ](http://ac.jobdu.com/index.php)     
   
-这有个ACM训练方案 http://www.java3z.com/cwbwebhome/article/article19/res041.html   
+这有个[ACM训练方案](http://www.java3z.com/cwbwebhome/article/article19/res041.html)   
 
 ### 其它
 
