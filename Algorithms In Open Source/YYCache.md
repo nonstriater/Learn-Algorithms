@@ -1,9 +1,7 @@
 
 ## YYCache
 
-### 项目简介
-
-[YYCache](https://github.com/ibireme/YYCache.git)是iOS系统上一套线程安全的Key-Value缓存实现，使用Objective-C语言实现。YYCache使用双向链表队列+hash表结构实现。
+[YYCache](https://github.com/ibireme/YYCache.git) 是 iOS 系统上一套线程安全的 `Key-Value` 缓存实现，使用 `Objective-C` 语言实现。`YYCache` 使用 `双向链表队列+hash表结构` 实现。
 
 ### 用到的算法介绍 
 
@@ -22,7 +20,7 @@
 }
 ```
 
-这里定义了一个双向链表结构，_prev,_next分别指向前缀节点和后缀节点。
+这里定义了一个双向链表结构，`_prev`,`_next`分别指向前缀节点和后缀节点。
 
 ```
 @interface _YYLinkedMap : NSObject {
