@@ -99,6 +99,7 @@
 * BFS/DFS （广度/深度优先遍历）    
 * 红黑树 （一种自平衡的`二叉查找树`）  
 * KMP    字符串匹配算法
+https://github.com/chengmo03013106/Learn-Algorithms/blob/master/%E5%AD%97%E7%AC%A6%E4%B8%B2/kmp%20%E7%AE%97%E6%B3%95
 * DP (动态规划 dynamic programming)   
 * A*寻路算法： 求解最短路径 
 * Dijkstra：最短路径算法 （八卦下：Dijkstra是荷兰的计算机科学家,提出”信号量和PV原语“,"解决哲学家就餐问题",”死锁“也是它提出来的） 
