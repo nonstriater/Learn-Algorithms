@@ -1,0 +1,94 @@
+三角形问题：
+step 1
+
+N = 5
+n\r n = 1,2,3...; r=1,2,3...
+7
+3 8
+8 1 0
+2 7 4 4
+4 5 2 6 5
+
+max value = D(r,j)
+
+new max value = max(D(r+1,j),D(r+1,j+1)) + D(r,j)
+
+vvv code vvv
+#include <iostream>    
+#include <algorithm>   
+#define MAX 101    
+using namespace std;   
+int D[MAX][MAX];    
+int n;    
+int MaxSum(int i, int j){      
+    if(i==n)    
+        return D[i][j];      
+    int x = MaxSum(i+1,j);      
+    int y = MaxSum(i+1,j+1);      
+    return max(x,y)+D[i][j];    
+}  
+int main(){      
+    int i,j;      
+    cin >> n;      
+    for(i=1;i<=n;i++)     
+        for(j=1;j<=i;j++)          
+            cin >> D[i][j];      
+    cout << MaxSum(1,1) << endl;    
+}
+
+递归转换为递推
+#include <iostream>    
+#include <algorithm>   
+using namespace std;   
+  
+#define MAX 101    
+  
+int D[MAX][MAX];     
+int n;    
+int maxSum[MAX][MAX];   
+int main(){      
+    int i,j;      
+    cin >> n;      
+    for(i=1;i<=n;i++)     
+        for(j=1;j<=i;j++)          
+            cin >> D[i][j];     
+    for( int i = 1;i <= n; ++ i )       
+        maxSum[n][i] = D[n][i];     
+    for( int i = n-1; i>= 1;  --i )       
+        for( int j = 1; j <= i; ++j )           
+            maxSum[i][j] = max(maxSum[i+1][j],maxSum[i+1][j+1]) + D[i][j];      
+    cout << maxSum[1][1] << endl;    
+} 
+
+空间优化后,final step
+#include <iostream>    
+#include <algorithm>   
+using namespace std;   
+  
+#define MAX 101    
+  
+int D[MAX][MAX];    
+int n;   
+int * maxSum;   
+  
+int main(){      
+    int i,j;      
+    cin >> n;      
+    for(i=1;i<=n;i++)     
+        for(j=1;j<=i;j++)          
+            cin >> D[i][j];     
+    maxSum = D[n]; //maxSum指向第n行      
+    for( int i = n-1; i>= 1;  --i )       
+        for( int j = 1; j <= i; ++j )         
+            maxSum[j] = max(maxSum[j],maxSum[j+1]) + D[i][j];      
+    cout << maxSum[1] << endl;    
+}  
+
+四个步骤：
+划分主要问题为子问题
+确定问题状态，每一个状态，都是一个子问题得到的解
+确定初始状态，三角形问题中，初始化边的数量等
+确定状态转移方程
+定义出什么是“状态”，以及在该“状态”下的“值”
+在此之后，就要找出不同的状态之间如何迁移，即如何从一个或多个“值”已知的 “状态”，求出另一个“状态”的“值”(递推型)。
+状态的迁移可以用递推公式表示，此递推公式也可被称作“状态转移方程”。
