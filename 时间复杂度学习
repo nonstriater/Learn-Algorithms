@@ -1,0 +1,33 @@
+时间复杂度：
+
+通常忽略次高项
+只保留最高项
+忽略常数项
+
+1.假设一个循环体的时间复杂度O(n),循环次数m，则时间复杂度O(m * n)
+例如：
+void aFunc(int n) {
+    for(int i = 0; i < n; i++) {         // 循环次数为 n
+        printf("Hello, World!\n");      // 循环体时间复杂度为 O(1)
+    }
+}
+时间复杂度 T(n) = O(n*1)
+
+2.多个循环体嵌套, m,n,j,k次，既O(m*n*j*k*循环体复杂度(命令行数)) 
+
+3.对于顺序执行的几个时间复杂度计算
+void aFunc(int n) {
+    // 第一部分时间复杂度为 O(n^2)
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            printf("Hello, World!\n");
+        }
+    }
+    // 第二部分时间复杂度为 O(n)
+    for(int j = 0; j < n; j++) {
+        printf("Hello, World!\n");
+    }
+}
+
+时间复杂度以第一部分结果，既max(O(第一部分),O(第二部分))
+
