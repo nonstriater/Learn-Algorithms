@@ -187,8 +187,7 @@
 * 《算法设计与分析基础》    
 * 《算法引论》 告诉你如何创造算法   断货        
 * 《Algorithm Design Manual》算法设计手册 红皮书  
-* 《算法导论》 是一本对算法介绍比较全面的经典书籍   
-     
+* 《算法导论》 是一本对算法介绍比较全面的经典书籍     
 * 《Algorithms on Strings,Trees and Sequences》    
 * 《Advanced Data Structures》 各种诡异高级的数据结构和算法 如元胞自动机、斐波纳契堆、线段树  600块    
   
@@ -199,8 +198,6 @@
 * 《TCP/IP详解三卷》    
 * 《UNIX网络编程二卷》  
 * 《UNIX环境高级编程：第2版》  
-    
-     
 * 《The practice of programming》   Brian Kernighan和Rob Pike    
 * 《writing efficient programs》  优化   
 * 《The science of programming》 证明代码段的正确性   800块一本   
@@ -215,8 +212,6 @@
 * 《十道海量数据处理面试题》      
 * 《数字图像处理领域的二十四个经典算法》    
 * 《精选微软等公司经典的算法面试100题》 
-
-
 * [The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July 
 * [微软面试100题](http://blog.csdn.net/column/details/ms100.html)    
 * [程序员编程艺术](http://blog.csdn.net/v_JULY_v/article/details/6460494)   
