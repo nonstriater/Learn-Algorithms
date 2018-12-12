@@ -212,7 +212,7 @@
 * 《十道海量数据处理面试题》      
 * 《数字图像处理领域的二十四个经典算法》    
 * 《精选微软等公司经典的算法面试100题》 
-* [The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July 
+* [The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July)
 * [微软面试100题](http://blog.csdn.net/column/details/ms100.html)    
 * [程序员编程艺术](http://blog.csdn.net/v_JULY_v/article/details/6460494)   
 
