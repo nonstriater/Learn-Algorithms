@@ -237,6 +237,7 @@ http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
 
 [算法设计与分析 Design and Analysis of Algorithms](https://class.coursera.org/algorithms-001/lecture) 由北大教授Wanling Qu在coursera讲授的一门算法课程。首先介绍一些与算法有关的基础知识，然后阐述经典的算法设计思想和分析技术，主要涉及的算法设计技术是：分治策略、动态规划、贪心法、回溯与分支限界等。每个视频都配有相应的讲义（pdf文件）以便阅读和复习。
 
+[OI Wiki](https://github.com/24OI/OI-wiki/) 主要内容是 OI / ACM-ICPC 相关的知识整理。
 
 
 
