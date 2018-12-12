@@ -170,41 +170,40 @@
 
 ### 刷题必备  
 
-《剑指offer》  
-《编程之美》  
-《编程之法:面试和算法心得》      
-《算法谜题》 都是思维题 
+*《剑指offer》  
+*《编程之美》  
+*《编程之法:面试和算法心得》      
+*《算法谜题》 都是思维题 
 
 ### 基础
 
-《编程珠玑》Programming Pearls   
-《编程珠玑(续)》   
-《数据结构与算法分析》   
-《Algorithms》 这本近千页的书只有6章,其中四章分别是排序，查找，图，字符串，足见介绍细致     
+*《编程珠玑》Programming Pearls   
+*《编程珠玑(续)》   
+*《数据结构与算法分析》   
+*《Algorithms》 这本近千页的书只有6章,其中四章分别是排序，查找，图，字符串，足见介绍细致     
 
 ### 算法设计 
 
-《算法设计与分析基础》    
-《算法引论》 告诉你如何创造算法   断货        
-《Algorithm Design Manual》算法设计手册 红皮书  
-
-《算法导论》 是一本对算法介绍比较全面的经典书籍   
+*《算法设计与分析基础》    
+*《算法引论》 告诉你如何创造算法   断货        
+*《Algorithm Design Manual》算法设计手册 红皮书  
+*《算法导论》 是一本对算法介绍比较全面的经典书籍   
      
-《Algorithms on Strings,Trees and Sequences》    
-《Advanced Data Structures》 各种诡异高级的数据结构和算法 如元胞自动机、斐波纳契堆、线段树  600块    
+*《Algorithms on Strings,Trees and Sequences》    
+*《Advanced Data Structures》 各种诡异高级的数据结构和算法 如元胞自动机、斐波纳契堆、线段树  600块    
   
  
 ### 延伸阅读 
    
-《深入理解计算机系统》    
-《TCP/IP详解三卷》    
-《UNIX网络编程二卷》  
-《UNIX环境高级编程：第2版》  
+*《深入理解计算机系统》    
+*《TCP/IP详解三卷》    
+*《UNIX网络编程二卷》  
+*《UNIX环境高级编程：第2版》  
     
      
-《The practice of programming》   Brian Kernighan和Rob Pike    
-《writing efficient programs》  优化   
-《The science of programming》 证明代码段的正确性   800块一本   
+*《The practice of programming》   Brian Kernighan和Rob Pike    
+*《writing efficient programs》  优化   
+*《The science of programming》 证明代码段的正确性   800块一本   
 
 
 ## 参考链接和学习网站
@@ -231,11 +230,10 @@ http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
    
 ### 编程网站
 
-[leetcode](http://leetcode.com/)    
-[openjudge](http://openjudge.cn/)  开放在线程序评测平台，可以创建自己的OJ小组  
-[九度OJ](http://ac.jobdu.com/index.php)     
-  
-这有个[ACM训练方案](http://www.java3z.com/cwbwebhome/article/article19/res041.html)   
+* [leetcode](http://leetcode.com/)    
+* [openjudge](http://openjudge.cn/)  开放在线程序评测平台，可以创建自己的OJ小组   
+* [九度OJ](http://ac.jobdu.com/index.php)     
+* 这有个[ACM训练方案](http://www.java3z.com/cwbwebhome/article/article19/res041.html)   
 
 ### 其它
 
