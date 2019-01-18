@@ -97,7 +97,8 @@
 * 快速排序 
 * 快递选择SELECT 
 * BFS/DFS （广度/深度优先遍历）    
-* 红黑树 （一种自平衡的`二叉查找树`）  
+* 红黑树 （一种自平衡的`二叉查找树`）：
+通过每次插入，删除后旋转，位置红黑树性质，同时以保证最坏情况下时间复杂度仍然可以接受  
 * KMP    字符串匹配算法
 https://github.com/chengmo03013106/Learn-Algorithms/blob/master/%E5%AD%97%E7%AC%A6%E4%B8%B2/kmp%20%E7%AE%97%E6%B3%95
 * DP (动态规划 dynamic programming)   
