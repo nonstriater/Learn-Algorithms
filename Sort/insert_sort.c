@@ -136,30 +136,27 @@ void heap_swop(int *a,int *b){
 
 
 //自顶向下调整
-void heap_public_adjust(int *a,int i,int length){
+void heap_public_adjust(int *a,int parent,int length){
 
 	// 三个数里取最大的一个  a[i],a[2i+1],a[2i+2],跟a[i]交换；然后是 a[(i-1)/2],a[i],a[i+1] .. 一直到a[0]
-		int tmp = i , max;//
-		while(2*tmp+1<length){
-			max = 2*tmp+1;
+	    int max = parent * 2 + 1;	
+		while(max < length){
 			//三个数里取最大的一个  a[tmp],a[2tmp+1],a[2tmp+2] 
-			if (2*tmp+2<length)// 越界检查
-			{
-				if (a[max] < a[2*tmp+2])// 先选出最大的子节点
-				{
-					max = 2*tmp+2;
-				}
+			if (max + 1 < length && a[max] < a[max + 1])// left < right
+            {
+                max++;
 			}
 
 			// 和最大孩子比
-			if (a[tmp] >= a[max])
+			if (a[parent] >= a[max])// parent > parent >= max(left, right)
 			{
 				break;
 			}
 			else
 			{
-				heap_swop(&a[tmp],&a[max]);	
-				tmp = 2*tmp+1;
+				heap_swop(&a[parent],&a[max]);
+                parent = max; //继续向下, 比对, 交换, 保证所有树 父节点 >= 子节点
+                max = 2 * parent + 1;
 			}
 
 		}
@@ -277,8 +274,8 @@ int main(){
 	
 
 	start = clock();
-	merge_sort(a,sizeof(a)/sizeof(int));    // 0.002s,可以看到，归并排序还是很快的
-	//heap_sort(a,sizeof(a)/sizeof(int));  // 有buggggggg
+	//merge_sort(a,sizeof(a)/sizeof(int));    // 0.002s,可以看到，归并排序还是很快的
+	heap_sort(a,sizeof(a)/sizeof(int));  // 有buggggggg
 	//quicksort(a,0,sizeof(a)/sizeof(int)-1); // 0.01s
 	//insert_sort(a,sizeof(a)/sizeof(int));  //  3.85s
 	//select_sort(a,sizeof(a)/sizeof(int));   // 5.3s
