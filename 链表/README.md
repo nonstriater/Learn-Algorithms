@@ -24,7 +24,7 @@ typedef struct Entry{
 
 ```
 
-### 带哨兵的双向链表
+### 带哨兵(sentinel)的双向链表
 
 取自Nginx 源码 中 ngx_queue_t 的使用：
 ```
@@ -36,8 +36,8 @@ struct ngx_queue_s {
 
 首先定义，并且初始化一个哨兵节点
 ```
-ngx_queue_t sentry;
-ngx_queue_init(&sentry);
+ngx_queue_t sentinel;
+ngx_queue_init(&sentinel);
 ```
 定义自己的结构体:
 ```
@@ -71,10 +71,10 @@ int insert_tail(h,x) {
 用法:
 ```
 my_node_t x,y;
-insert_head(&sentry,&x);
-insert_tail(&sentry,&y);
+insert_head(&sentinel,&x);
+insert_tail(&sentinel,&y);
 ```
-PS:保持哨兵节点的 prev 指向链表的尾数据节点，next 指向链表的头数据节点
+PS:保持哨兵(sentinel)节点的 prev 指向链表的尾数据节点，next 指向链表的头数据节点
 
 
 
