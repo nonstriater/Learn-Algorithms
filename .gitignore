@@ -8,6 +8,7 @@
 *.dat
 *.txt
 *ipslice*
+*.log
 
 
 
