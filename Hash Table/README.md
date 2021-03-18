@@ -8,6 +8,7 @@
 * 散列函数设计
 * 冲突处理
 * hashmap数据结构
+* Java 中HashMap实现
 
 
 散列表使用某种算法操作(散列函数)将键转化为数组的索引来访问数组中的数据，这样可以通过Key-value的方式来访问数据，达到常数级别的存取效率。现在的nosql数据库都是采用key-value的方式来访问存储数据。
@@ -202,6 +203,12 @@ HashMap *_putInList(HashMap *hashMap,int index,Key key,Value value){
 1.  cocos2d 游戏引擎  CCScheduler  
 2.  linux 内核bcache。 缓存加速技术，使用SSD固态硬盘作为高速缓存，提高慢速存储设备HDD机械硬盘的性能
 3. hash表在海量数据处理中有广泛应用。如海量日志中，提取出某日访问百度次数最多的IP
+
+
+## Java 中HashMap实现
+
+编程语言中HashMap是如何实现的呢?  说说 Java ， Golang
+
 
 
 ## 参考
