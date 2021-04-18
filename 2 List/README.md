@@ -13,6 +13,10 @@
 
 简单说下编程语言 java， golang中 LinkList的扩缩容的策略。
 
+java 中扩容，每次扩容新增原先容量的 1/2
+```
+ int newCapacity = oldCapacity + (oldCapacity >> 1);
+```
 
 
 ## 双向链表
@@ -29,6 +33,10 @@ typedef struct Entry{
 }DoubleLink;
 
 ```
+
+## 循环链表
+
+最后一个节点指针指向头节点的链表
 
 
 ## 双向循环链表

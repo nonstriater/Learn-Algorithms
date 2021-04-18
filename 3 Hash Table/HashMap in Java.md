@@ -19,11 +19,15 @@ java 中 hashmap的实现原理。
 public class HashMap<K,V> extends AbstractMap<K,V>
     implements Map<K,V>, Cloneable, Serializable {
 
+    int threshold; //扩容 capacity * load factor    
+
+    final float loadFactor; //默认 0.75    
+
     static class Node<K,V> implements Map.Entry<K,V> {
         final int hash;
         final K key;
         V value;
-        Node<K,V> next;
+        Node<K,V> next;//链表结构
         ...
     }
 
@@ -44,21 +48,46 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         return (e = getNode(hash(key), key)) == null ? null : e.value;
     }
 
+    //hash 算法， 根据 key 的 hashCode() 计算而来
+    static final int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+    }
+
 }
 ```
 
 
+
+
 ## Hash冲突
+
+HashMap是怎么处理hash碰撞的?
+
 
 
 ## 扩容
+
+初始化容量, 默认结果是 16
+
+```
+static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16， 为啥用位运算呢?直接写16不好么?
+```
+
+
+HashMap的扩容方式? 负载因子是多少? 为什是这么多?
+
+HashMap 中 `final float ` ,  loadFactor 默认 0.75 , 也就是达到容量的 75%时就会开始扩容。那么问题来了，扩容到多达？ 扩容后元素怎么重排到新的容器中，直接复制拷贝可以吗？
 
 
 
 
 ## 问题
 
+### 链表上使用的头插还是尾插方式？
 
+
+### 多线程下死循环问题
 
 
 
