@@ -311,7 +311,9 @@ https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4631373 提出， 整数的
 举个例子
 ```
 hashcode 311 对应的二进制是(1 0011 0111)
-length 16  对应的二进制是(1 0000)
+length 16  对应的二进制是(1 0000) ,  length-1 就是 （0 1111）
+
+h & (length-1)` 就是取 hashcode 的低 4位
 
 ```
 
