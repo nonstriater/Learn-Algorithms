@@ -19,10 +19,17 @@ java 中 hashmap的实现原理。
 public class HashMap<K,V> extends AbstractMap<K,V>
     implements Map<K,V>, Cloneable, Serializable {
 
-    int threshold; //扩容 capacity * load factor    
+    transient int size; //当前元素个数
 
-    final float loadFactor; //默认 0.75    
+    int threshold; //扩容时机是： 当前容量大于等于 capacity * load factor    
 
+    final float loadFactor; //默认 0.75 , 空间使用 75% 时开始扩容
+
+    static final int TREEIFY_THRESHOLD = 8; //将链表转换为红黑树的阈值
+
+    static final int UNTREEIFY_THRESHOLD = 6; //将红黑树转换为链表的阈值
+
+    //1.7结构
     static class Node<K,V> implements Map.Entry<K,V> {
         final int hash;
         final K key;
@@ -31,6 +38,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         ...
     }
 
+    //1.8结构
     static final class TreeNode<K,V> extends LinkedHashMap.Entry<K,V> {
         TreeNode<K,V> parent;  // red-black tree links
         TreeNode<K,V> left;
@@ -57,14 +65,96 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 }
 ```
 
+1.7 的实现是 数组+链表； 1.8 新增了红黑树，提高查询效率
 
+
+get(key) 方法
+
+```
+public V get(Object key) {
+    Node<K,V> e;
+    return (e = getNode(hash(key), key)) == null ? null : e.value;
+}
+final Node<K,V> getNode(int hash, Object key) {
+    Node<K,V>[] tab; Node<K,V> first, e; int n; K k;
+    if ((tab = table) != null && (n = tab.length) > 0 &&
+        (first = tab[(n - 1) & hash]) != null) {
+        if (first.hash == hash && // always check first node
+            ((k = first.key) == key || (key != null && key.equals(k))))
+            return first;
+        if ((e = first.next) != null) {
+            if (first instanceof TreeNode)//红黑树 查找
+                return ((TreeNode<K,V>)first).getTreeNode(hash, key);
+            do {//按照链表结构遍历查找
+                if (e.hash == hash &&
+                    ((k = e.key) == key || (key != null && key.equals(k))))
+                    return e;
+            } while ((e = e.next) != null);
+        }
+    }
+    return null;
+}
+
+```
+
+put(key, value) 方法
+
+```
+public V put(K key, V value) {
+    return putVal(hash(key), key, value, false, true);
+}
+    
+    final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+                   boolean evict) {
+        Node<K,V>[] tab; Node<K,V> p; int n, i;
+        if ((tab = table) == null || (n = tab.length) == 0)
+            n = (tab = resize()).length;
+        if ((p = tab[i = (n - 1) & hash]) == null)//当前桶为空，没有hash冲突
+            tab[i] = newNode(hash, key, value, null);
+        else {
+            Node<K,V> e; K k;
+            if (p.hash == hash &&
+                ((k = p.key) == key || (key != null && key.equals(k))))//当前桶中的 key、key 的 hashcode 与写入的 key 相等
+                e = p;
+            else if (p instanceof TreeNode)//当前桶为红黑树，那按照红黑树的方式写入数据
+                e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
+            else {//链表，就需要将当前的 key、value 封装成一个新节点写入到当前桶的后面
+                for (int binCount = 0; ; ++binCount) {
+                    if ((e = p.next) == null) {
+                        p.next = newNode(hash, key, value, null);
+                        if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
+                            treeifyBin(tab, hash);//判断当前链表的大小是否大于预设的阈值，大于时就要转换为红黑树
+                        break;
+                    }
+                    if (e.hash == hash &&
+                        ((k = e.key) == key || (key != null && key.equals(k))))//在遍历过程中找到 key 相同时直接退出遍历
+                        break;
+                    p = e;
+                }
+            }
+            if (e != null) { // existing mapping for key
+                V oldValue = e.value;
+                if (!onlyIfAbsent || oldValue == null)
+                    e.value = value;
+                afterNodeAccess(e);
+                return oldValue;
+            }
+        }
+        ++modCount;
+        if (++size > threshold)//最后判断是否需要进行扩容
+            resize();
+        afterNodeInsertion(evict);
+        return null;
+    }
+
+```
 
 
 ## Hash冲突
 
 HashMap是怎么处理hash碰撞的?
 
-
+使用拉链法，为了提高链表查询效率，当桶对应的链表长度大于8的时候，转为红黑树。
 
 ## 扩容
 
@@ -74,10 +164,12 @@ HashMap是怎么处理hash碰撞的?
 static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16， 为啥用位运算呢?直接写16不好么?
 ```
 
-
 HashMap的扩容方式? 负载因子是多少? 为什是这么多?
 
-HashMap 中 `final float ` ,  loadFactor 默认 0.75 , 也就是达到容量的 75%时就会开始扩容。那么问题来了，扩容到多达？ 扩容后元素怎么重排到新的容器中，直接复制拷贝可以吗？
+HashMap 中 `final float ` ,  loadFactor 默认 0.75 , 也就是达到容量的 75%时就会开始扩容。那么问题来了，扩容到多大？ 扩容后元素怎么重排到新的容器中，直接复制拷贝可以吗？
+
+扩容会 rehash，复制数据等耗时操作。
+
 
 
 
@@ -90,6 +182,21 @@ HashMap 中 `final float ` ,  loadFactor 默认 0.75 , 也就是达到容量的 
 ### 多线程下死循环问题
 
 
+HashMap 在并发场景下，容易出现死循环
+
+```
+final HashMap<String, String> map = new HashMap<String, String>();
+for (int i = 0; i < 1000; i++) {
+    new Thread(new Runnable() {
+        @Override
+        public void run() {
+            map.put(UUID.randomUUID().toString(), "");
+        }
+    }).start();
+}
+```
+
+在 HashMap 扩容的时候会调用 resize() 方法，就是这里的并发操作容易在一个桶上形成环形链表；这样当获取一个不存在的 key 时，计算出的 index 正好是环形链表的下标就会出现死循环。
 
 
 
