@@ -3,16 +3,11 @@
 java 中 hashmap的实现原理。
 
 
-* HashMap底层实现, hashmap的存储结构和操作？
-* hashmap的数组长度为什么要保证是2的幂？
-* hash冲突如何解决（链表和红黑树）为什么hashmap中的链表需要转成红黑树？
-* 扩容时机，什么时候会触发扩容？扩容时避免rehash的优化；
-* hashmap扩容时每个entry需要再计算一次hash吗？
-* hashmap扩容会引发什么问题，线上是否出现过类似的问题？如何避免扩容引发的问题？
-* jdk1.8之前并发操作hashmap时为什么会有死循环的问题？
-
 
 ## 数据结构
+
+* HashMap底层实现, hashmap的存储结构和操作？
+* hash冲突如何解决（链表和红黑树）？ 为什么hashmap中的链表需要转成红黑树？
 
 
 ```
@@ -65,10 +60,12 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 }
 ```
 
+table 在第一次put的时候初始化，length默认16， threshold 12 (0.75x16) ， 也就是第 13个 元素 put 的时候开始扩容
+
 1.7 的实现是 数组+链表； 1.8 新增了红黑树，提高查询效率
 
 
-get(key) 方法
+### get(key) 方法
 
 ```
 public V get(Object key) {
@@ -97,7 +94,7 @@ final Node<K,V> getNode(int hash, Object key) {
 
 ```
 
-put(key, value) 方法
+### put(key, value) 方法
 
 ```
 public V put(K key, V value) {
@@ -164,12 +161,110 @@ HashMap是怎么处理hash碰撞的?
 static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16， 为啥用位运算呢?直接写16不好么?
 ```
 
-HashMap的扩容方式? 负载因子是多少? 为什是这么多?
+为什么需要扩容？
 
-HashMap 中 `final float ` ,  loadFactor 默认 0.75 , 也就是达到容量的 75%时就会开始扩容。那么问题来了，扩容到多大？ 扩容后元素怎么重排到新的容器中，直接复制拷贝可以吗？
+主要为缓解哈希冲突造成的外挂链表太长，造成查询性能低下。
 
+
+HashMap的扩容方式? 负载因子是多少? 扩容时机？什么时候会触发扩容？
+
+HashMap 中 `final float loadFactor` ,  loadFactor 默认 0.75 , 也就是达到容量的 75%时就会开始扩容。
+
+那么问题来了，扩容到多大？ 看 resize() 方法
+
+```
+final Node<K,V>[] resize() {
+        Node<K,V>[] oldTab = table;
+        int oldCap = (oldTab == null) ? 0 : oldTab.length;
+        int oldThr = threshold;
+        int newCap, newThr = 0;
+        if (oldCap > 0) {
+            if (oldCap >= MAXIMUM_CAPACITY) {
+                threshold = Integer.MAX_VALUE;
+                return oldTab;
+            }
+            else if ((newCap = oldCap << 1) < MAXIMUM_CAPACITY &&
+                     oldCap >= DEFAULT_INITIAL_CAPACITY)
+                newThr = oldThr << 1; // double threshold
+        }
+        else if (oldThr > 0) // initial capacity was placed in threshold
+            newCap = oldThr;
+        else {               // zero initial threshold signifies using defaults
+            newCap = DEFAULT_INITIAL_CAPACITY;
+            newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);
+        }
+        if (newThr == 0) {
+            float ft = (float)newCap * loadFactor;
+            newThr = (newCap < MAXIMUM_CAPACITY && ft < (float)MAXIMUM_CAPACITY ?
+                      (int)ft : Integer.MAX_VALUE);
+        }
+        threshold = newThr;
+
+        //创建一个新的 newCap 大小的数组容器，调整table
+        @SuppressWarnings({"rawtypes","unchecked"})
+        Node<K,V>[] newTab = (Node<K,V>[])new Node[newCap];
+        table = newTab;
+        if (oldTab != null) {
+            for (int j = 0; j < oldCap; ++j) {
+                Node<K,V> e;
+                if ((e = oldTab[j]) != null) {//有数据的桶才需要调整
+                    oldTab[j] = null;
+                    if (e.next == null)//没有链表结构
+                        newTab[e.hash & (newCap - 1)] = e;
+                    else if (e instanceof TreeNode)
+                        ((TreeNode<K,V>)e).split(this, newTab, j, oldCap);
+                    else { // preserve order
+                        Node<K,V> loHead = null, loTail = null;
+                        Node<K,V> hiHead = null, hiTail = null;
+                        Node<K,V> next;
+                        do {
+                            next = e.next;
+                            if ((e.hash & oldCap) == 0) {//hash值第 N+1 位是否为0
+                                if (loTail == null)
+                                    loHead = e;
+                                else
+                                    loTail.next = e;
+                                loTail = e;
+                            }
+                            else {
+                                if (hiTail == null)
+                                    hiHead = e;
+                                else
+                                    hiTail.next = e;
+                                hiTail = e;
+                            }
+                        } while ((e = next) != null);
+
+                        if (loTail != null) {
+                            loTail.next = null;
+                            newTab[j] = loHead;
+                        }
+                        if (hiTail != null) {
+                            hiTail.next = null;
+                            newTab[j + oldCap] = hiHead;
+                        }
+                    }
+                }
+            }
+        }
+        return newTab;
+    }
+```
+
+扩容到了2倍 `newThr = oldThr << 1; ` 
+
+
+
+扩容后元素怎么重排到新的容器中，直接复制拷贝可以吗？ 
 扩容会 rehash，复制数据等耗时操作。
 
+
+* hashmap扩容时每个entry需要再计算一次hash吗？
+
+不需要，但是需要重新调整桶的位置 `newTab[e.hash & (newCap - 1)] = e;`
+
+
+* 扩容时避免rehash的优化；
 
 
 
@@ -181,6 +276,9 @@ HashMap 中 `final float ` ,  loadFactor 默认 0.75 , 也就是达到容量的 
 
 ### 多线程下死循环问题
 
+
+* hashmap扩容会引发什么问题，线上是否出现过类似的问题？如何避免扩容引发的问题？
+* jdk1.8之前并发操作hashmap时为什么会有死循环的问题？
 
 HashMap 在并发场景下，容易出现死循环
 
@@ -196,7 +294,29 @@ for (int i = 0; i < 1000; i++) {
 }
 ```
 
-在 HashMap 扩容的时候会调用 resize() 方法，就是这里的并发操作容易在一个桶上形成环形链表；这样当获取一个不存在的 key 时，计算出的 index 正好是环形链表的下标就会出现死循环。
+在 HashMap 扩容的时候会调用 resize() 方法，就是这里的并发操作容易在一个桶上形成环形链表；这样当获取一个不存在的 key 时，计算出的 index 正好是环形链表的下标就会出现死循环。程序临床反应就是 CPU 飙高， 这时候应该使用线程安全的HashMap，也就是 ConcurrentHashMap。
+
+
+
+
+
+### hashmap的数组长度为什么要保证是2的幂？
+
+
+https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4631373 提出， 整数的除法（/）和 取模（%） 运算 性能比 位与操作(&) 慢10倍。
+
+
+`h & (length-1)` 和 `h % length` 结果一样
+
+举个例子
+```
+hashcode 311 对应的二进制是(1 0011 0111)
+length 16  对应的二进制是(1 0000)
+
+```
+
+length 保持为 2 的幂， 那么length-1就会变成一个mask, 它会将hashcode低位取出来，hashcode的低位实际就是余数，和取余操作相比，与操作会将性能提升很多。
+
 
 
 
