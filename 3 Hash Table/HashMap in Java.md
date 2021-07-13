@@ -98,6 +98,23 @@ final Node<K,V> getNode(int hash, Object key) {
 
 ```
 
+
+```
+//计算hash值
+//这是一个神奇的函数，用了很多的异或，移位等运算，对key的hashcode进一步进行计算以及二进制位的调整等来保证最终获取的存储位置尽量分布均匀
+final int hash(Object k) {
+        int h = hashSeed;
+        if (0 != h && k instanceof String) {
+            return sun.misc.Hashing.stringHash32((String) k);
+        }
+
+        h ^= k.hashCode();
+
+        h ^= (h >>> 20) ^ (h >>> 12);
+        return h ^ (h >>> 7) ^ (h >>> 4);
+ }
+```
+
 ### put(key, value) 方法
 
 
@@ -163,6 +180,9 @@ static int indexFor(int h, int length) {
 ```
 
 这里用的位运行，而不是取模操作； 位运算性能更高。
+
+
+
 
 
 
@@ -284,7 +304,7 @@ final Node<K,V>[] resize() {
 不需要，但是需要重新调整桶的位置 `newTab[e.hash & (newCap - 1)] = e;`
 
 
-* 扩容时避免rehash的优化；
+* 扩容时避免rehash的优化 : cap 为 2 的次幂，rehash也是 cap * 2 ， 这样可以 `e.hash & (newCap - 1)` 计算时，有较少的 key 产生移动，hash值 高位 1 的 才需要移动
 
 
 
@@ -295,11 +315,13 @@ final Node<K,V>[] resize() {
 ### JDK7 和 8 HashMap 有什么区别？
 
 * JDK8 实现引入红黑树，优化链表过长的查询效率
-* 1.7 采用头插法，1.8采用尾插法
+* 1.7 采用头插法，1.8采用尾插法； 解决多线程中出出现链表成环的问题 ； （hashmap本来就是非线程安全的，为啥要在多线程中使用hashmap）
 
 
 
 ### 链表上使用的头插还是尾插方式？
+
+1.7 采用头插法，1.8采用尾插法； 解决多线程中出出现链表成环的问题
 
 
 ### 多线程下死循环问题
@@ -323,7 +345,6 @@ for (int i = 0; i < 1000; i++) {
 ```
 
 在 HashMap 扩容的时候会调用 resize() 方法，就是这里的并发操作容易在一个桶上形成环形链表；这样当获取一个不存在的 key 时，计算出的 index 正好是环形链表的下标就会出现死循环。程序临床反应就是 CPU 飙高， 这时候应该使用线程安全的HashMap，也就是 ConcurrentHashMap。
-
 
 
 
@@ -353,9 +374,21 @@ length 保持为 2 的幂， 那么length-1就会变成一个mask, 它会将hash
 
 
 
+### 重写equals方法需同时重写hashCode方法
 
 
+```
+public static void main(String []args){
+        HashMap<Person,String> map = new HashMap<Person, String>();
+        Person person = new Person(1234,"乔峰");
+        //put到hashmap中去
+        map.put(person,"天龙八部");
+        //get取出，从逻辑上讲应该能输出“天龙八部”
+        System.out.println("结果:"+map.get(new Person(1234,"萧峰")));
+}
+```
 
+hashCode()的默认行为是对堆上的对象产生独特值。因此 map.get(object) 的时候，不同的 object 的hashcode 不一样，自然结果就为null
 
 
 
