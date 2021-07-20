@@ -66,7 +66,39 @@ String ceilingKey =treeMap.ceilingKey("jiaboyan");//获取集合内的key大于�
 
 简单说下原理：
 
+treeMap 中 key 是 机器节点node 的 hash值， value 是机器节点 IP:port  ； 使用TreeMap的  ceilingKey(hash) 这个 API 可以获得   第一个大于 这个 hash值的 节点
 
+```
+public class Demo {
+
+    private static String[] servers = {“ip1”, “1p2”, “ip3"};
+
+    private TreeMap treeMap; //
+
+    /* 一个数据key，会被分片到哪个机器上 */
+    public String shardingServer(String key) {
+        
+        int  dataHash = hash(key);
+
+        //怎么找大于 data_hash 值 的第一个节点？  借助 TreeMap 结构
+        String node = getServer(dataHash)
+        
+        return node;
+    }
+
+    /* hash 函数*/
+    public int hash(String key){
+
+    }
+
+    //寻找第一个大于 hash 值的 node
+    private String getServer(String hash) {
+        
+        return treeMap.ceilingKey(hash)
+    }
+
+}
+```
 
 
 
