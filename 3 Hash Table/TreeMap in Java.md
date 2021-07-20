@@ -53,7 +53,7 @@ String ceilingKey =treeMap.ceilingKey("jiaboyan");//获取集合内的key大于�
 ## 原理
 
 
-参考 ![红黑树](../Tree/9-红黑树\ R-B\ tree/红黑树.md)
+参考 [红黑树](../Tree/9-红黑树\ R-B\ tree/红黑树.md)
 
 
 ## 应用
