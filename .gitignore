@@ -1,6 +1,4 @@
 
-####
-
 *.gitignore
 *.out
 *.dSYM
@@ -10,9 +8,7 @@
 *ipslice*
 *.log
 
-
-
-
-#####
+cmake-build-debug
+*.idea
 
 
