@@ -100,6 +100,9 @@
 
 
 
+[九度OJ](http://ac.jobdu.com/index.php)
+[leetcode 题目](https://leetcode.com/)
+
 
 
 
