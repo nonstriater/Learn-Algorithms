@@ -2,6 +2,7 @@
 
 #include "stdio.h"
 
+//打印和为n的2个值
 void print_continuous_sequence_sum(int n){// n=1,2
 
 	int small=1;

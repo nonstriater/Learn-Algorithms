@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
-  #define PrintInt(expr) printf("%s : %d\n",#expr,(expr))
+
+#define PrintInt(expr) printf("%s : %d\n",#expr,(expr))
+
   int main()
   {
       int y = 100;
