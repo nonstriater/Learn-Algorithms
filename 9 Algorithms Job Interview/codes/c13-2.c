@@ -1,9 +1,8 @@
  #include "c13-1.c"
 
- extern int *arr;
+
   int main()
   {
-      arr[1] = 100;
       return 0;
   }
 

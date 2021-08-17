@@ -51,7 +51,7 @@ int main(int argc, char const *argv[])
 	char *test = "how are you ?";
 	printf("%s\n",_revert_by_word(test));
 
-	//char *test = "I am a  student.";
-	//printf("%s\n",revert_by_word(test));
+	test = "I am a  student.";
+	printf("%s\n",revert_by_word(test));
 	return 0;
 }

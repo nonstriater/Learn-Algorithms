@@ -3,11 +3,9 @@
 二叉查找树变成双向链表
 */
 
-strcut BSTreeNode{
-
+typedef struct BSTreeNode{
 	int m_nValue;
-	BSTreeNode *m_pLeft,m_pRight;
-
+	struct BSTreeNode *m_pLeft, *m_pRight;
 }BSTree;
 
 void convertDoubleLinks(BSTree *root){

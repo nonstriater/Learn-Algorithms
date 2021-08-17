@@ -8,16 +8,11 @@
 #define test_file_path "./ip.txt"
 #define ip_count 100000000 //随机1亿个IP
 #define tmp_file_count 32
-
 #define mem_count 128*1024*1028 //128MB个IP空间
 
-
 int hash(unsigned i){
-
 	return i>>27;
-
 }
-
 
 int main(){
 
@@ -52,9 +47,6 @@ int main(){
 		}
 	}
 
-
-
-
 	//开始读测试数据IP，按IP，映射到32个文件中
 	FILE *testfd = fopen(test_file_path2,"r");
 	if (!testfd)
@@ -74,8 +66,6 @@ int main(){
 		//跳过换行符
 		fseek(testfd,1,SEEK_CUR);
 	}
-
-
 
 
 	// 依次读入每个文件并统计， hash_map 统计每个区间段的最大IP

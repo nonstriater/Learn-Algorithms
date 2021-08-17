@@ -12,7 +12,7 @@
   int main()
   {
      char ch = 'a';
-     foobar1(33, ch);
+     foobar1();
      foobar2();
      return 0;
   }

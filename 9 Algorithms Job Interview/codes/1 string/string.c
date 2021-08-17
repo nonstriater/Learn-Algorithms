@@ -264,7 +264,7 @@ void compress(char *src){
 	}
 
 	int count = 1;
-	char *back=src,forward=src+1;
+	char *back=src,*forward=src+1;
 
 	while(*forward){
 
