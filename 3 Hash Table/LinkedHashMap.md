@@ -2,12 +2,18 @@
 
 java 中 LinkedHashmap的实现原理。LinkedHashmap继承自 HashMap。 
 
-HashMap是无序的，迭代访问顺序并不一定与插入(put)顺序一致。 迭代顺序与插入顺序一致，这种叫做 插入有序。
+HashMap是无序的，迭代访问顺序并不一定与插入(put)顺序一致。LinkedHashMap 是有序的， 迭代顺序与插入顺序一致，这种叫做 插入有序。
+
+
+```
+```
+
 
 #### 特点
 
 * 维护一个所有entry的双向链表
-* 构造函数 有一个 accessOrder 参数，控制访问顺序 （插入顺序 和 访问顺序）； 其中，访问顺序比较适合做 LRU 缓存
+* 构造函数 有一个 accessOrder 参数，控制访问顺序 （插入顺序 和 访问顺序）；
+* 访问顺序的意思是，当有一个entry被访问以后，这个entry就被移动到链表的表尾。这个特性非常适合 LRU 缓存 (最近最少使用);
 
 
 #### 引用场景
@@ -34,6 +40,14 @@ public class LinkedHashMap<K,V>
 
     	transient LinkedHashMap.Entry<K,V> tail;
 
+        //构造函数如下, 
+        public LinkedHashMap(int initialCapacity,
+                         float loadFactor,
+                         boolean accessOrder) {
+        super(initialCapacity, loadFactor);
+        this.accessOrder = accessOrder;
+    }
+
     }
 ```
 
@@ -41,21 +55,9 @@ public class LinkedHashMap<K,V>
 ## 用LinkedHashMap实现LRU
 
 
-构造函数如下
+构造函数中 accessOrder 参数是控制LinkedHashMap 访问顺序，默认为插入顺序（false）, true 代表访问顺序。
 
-```
-public LinkedHashMap(int initialCapacity,
-                         float loadFactor,
-                         boolean accessOrder) {
-        super(initialCapacity, loadFactor);
-        this.accessOrder = accessOrder;
-    }
-```
-
-accessOrder 是访问顺序，默认为插入顺序（false）, true 代表访问顺序。
-
-
-访问顺序的意思是，当有一个entry被访问以后，这个entry就被移动到链表的表尾。  这个特性非常适合 LRU 缓存 (最近最少使用) ;
+访问顺序的意思是，当有一个entry被访问以后，这个entry就被移动到链表的表尾。 这个特性非常适合 LRU 缓存 (最近最少使用) ;
 
 插入逻辑，运行自定义删除最老entry的逻辑
 
