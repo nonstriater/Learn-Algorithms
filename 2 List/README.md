@@ -6,7 +6,9 @@
 
 ## 链表
 
-这个就不介绍了。重点说下双向链表。
+### 应用场景
+
+* [redis slowlog](Redis%20slowlog.md)
 
 
 ### 扩缩容
@@ -17,6 +19,8 @@ java 中扩容，每次扩容新增原先容量的 1/2
 ```
  int newCapacity = oldCapacity + (oldCapacity >> 1);
 ```
+
+这个就不介绍了。重点说下双向链表。
 
 
 ## 双向链表
@@ -38,6 +42,7 @@ typedef struct Entry{
 
 最后一个节点指针指向头节点的链表
 
+[QPS 计数器实现](QPS%20Counter.md)
 
 
 ## 双向循环链表
