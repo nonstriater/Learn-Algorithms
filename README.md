@@ -17,12 +17,12 @@
 
 这些算法全部自己敲一遍：
 
-### 链表
+### [链表](2%20List/README.md)
 
 * 链表
 * 双向链表
 
-### 队列
+### [队列](2%20List/Queue.md)
  
 * 队列
 * 堆栈
@@ -32,7 +32,7 @@
 * 散列函数
 * 碰撞解决
 
-### [字符串算法](./1\ String/README.md)
+### [字符串算法](1%20String/README.md)
 
 * 排序
 * 查找
@@ -43,7 +43,7 @@
 * 数据压缩
 
 
-### 树
+### [树](4%20Tree/README.md)
 
 * 二叉树    
 * 二叉查找树   
@@ -61,7 +61,7 @@
 * 斐波那契堆(Fibonacci Heap)   
 
 
-### 图的算法
+### [图的算法](5%20Graph/README.md)
 
 * 图的存储结构和基本操作（建立，遍历，删除节点，添加节点）   
 * 最小生成树  
@@ -71,7 +71,7 @@
   
   
   
-### 排序算法
+### [排序算法](6%@0Sort/README.md)
 
 **交换排序算法**
 
@@ -88,7 +88,7 @@
 * 桶排序 
   
   
-### 查找算法  
+### [查找算法](7%20Search/README.md)  
 
 * 顺序表查找：顺序查找  
 * 有序表查找：二分查找  
@@ -97,39 +97,7 @@
 * 哈希表：  O(1)     
 
 
-### 15个经典基础算法
-
-* Hash  
-* 快速排序 
-* 快递选择SELECT 
-* BFS/DFS （广度/深度优先遍历）    
-* 红黑树 （一种自平衡的`二叉查找树`）  
-* KMP    字符串匹配算法
-* DP (动态规划 dynamic programming)   
-* A*寻路算法： 求解最短路径 
-* Dijkstra：最短路径算法 （八卦下：Dijkstra是荷兰的计算机科学家,提出”信号量和PV原语“,"解决哲学家就餐问题",”死锁“也是它提出来的） 
-* 遗传算法  
-* 启发式搜索   
-* 图像特征提取之 SIFT 算法  
-* 傅立叶变换  
-* SPFA(shortest path faster algorithm) 单元最短路径算法 		
-
-
-## 海量数据处理
-
-* Hash映射/分而治之
-* Bitmap
-* Bloom filter(布隆过滤器)
-* Trie树
-* 数据库索引
-* 倒排索引(Inverted Index)
-* 双层桶划分
-* 外排序
-* simhash算法
-* 分布处理之Mapreduce
-
-
-## 算法设计思想
+## [算法设计思想](8%20Algorithms%20Analysis/README.md)
  
 * 迭代法  
 * 穷举搜索法  
@@ -140,7 +108,8 @@
 * 分治算法  
 
 
-## 算法题目选编
+
+## [面试算法题目](9%20Algorithms%20Job%20Interview/README.md)
 
 这是一个算法题目合集，题目是我从网络和书籍之中整理而来，部分题目已经做了思路整理。问题分类包括：
 
@@ -163,11 +132,53 @@
 * 剑指offer
 
 
-## 开源项目中的算法
+## [海量数据处理](91%20Algorithms%20In%20Big%20Data/README.md)
+
+* Hash映射/分而治之
+* Bitmap
+* Bloom filter(布隆过滤器)
+* Trie树
+* 数据库索引
+* 倒排索引(Inverted Index)
+* 双层桶划分
+* 外排序
+* simhash算法
+* 分布处理之Mapreduce
+
+
+
+## [开源项目中的算法](93%20Algorithms%20In%20Open%20Source/README.md)
 
 * YYCache
 * cocos2d-objc
+* bitcoin
+* geohash
+* kafka
+* nginx
+* zookeeper
 * ...
+
+
+
+
+## 15个经典基础算法
+
+* Hash  
+* 快速排序 
+* 快递选择SELECT 
+* BFS/DFS （广度/深度优先遍历）    
+* 红黑树 （一种自平衡的`二叉查找树`）  
+* KMP    字符串匹配算法
+* DP (动态规划 dynamic programming)   
+* A*寻路算法： 求解最短路径 
+* Dijkstra：最短路径算法 （八卦下：Dijkstra是荷兰的计算机科学家,提出”信号量和PV原语“,"解决哲学家就餐问题",”死锁“也是它提出来的） 
+* 遗传算法  
+* 启发式搜索   
+* 图像特征提取之 SIFT 算法  
+* 傅立叶变换  
+* SPFA(shortest path faster algorithm) 单元最短路径算法 		
+
+
 
 
 ## 推荐阅读
