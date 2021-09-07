@@ -27,7 +27,7 @@
 * 队列
 * 堆栈
 
-### [哈希表/散列表(Hash Table)](3 Hash Table/README.md)
+### [哈希表/散列表(Hash Table)](3%20Hash%20Table/README.md)
 
 * 散列函数
 * 碰撞解决
