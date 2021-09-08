@@ -56,7 +56,7 @@ long long sum(unsigned int n);
 
 
 ```
-int sum(int,int)
+int sum(int a,int b
 ```
 
 
@@ -68,20 +68,6 @@ int sum(int,int)
 
 ```
 int ugly(int n)
-```
-
-
-
-### 把字符串转换成整数
-
-比如 "12343567754" -> 12343567754
-
-
-`NULL,空串,正负号,溢出`
-
-
-```
-int strToInt(char str);
 ```
 
 
@@ -101,6 +87,18 @@ int strToInt(char str);
 void replace_blank(char *str);
 ```
 
+
+### 把字符串转换成整数
+
+比如 "12343567754" -> 12343567754
+
+
+`NULL,空串,正负号,溢出`
+
+
+```
+int strToInt(char str);
+```
 
 
 ###  第一个只出现一次的字符
