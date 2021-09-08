@@ -8,66 +8,8 @@
 * 本书完整源代码在：
 
 
-### 赋值运算符函数  
-### 实现Singleton模式
+# 数值
 
-
-### 二维数组中的查找
-
-二维数组中每一行从左到右递增，每一列从上到下递增，判断数组中是否包含该整数。
-
-```
-bool find(int *matrix,int rows,int columns,int numbers)
-```
-
-
-### 替换空格
-
-如把字符串中的每个空格替换成`%20` 
-
-`二遍扫描` 
-
-```
-void replace_blank(char *str);
-```
-
-
-### 从尾到头打印链表 
-
-`栈`
-
-```
-void print_reversing(LinkList *head)
-```
-
-
-### 重建二叉树
-
-输入某二叉树的前序遍历和中序遍历的结果，重建该二叉树
-
-```
-BinaryTree *construct(int *preorder,int inroder,int length);
-```
-
-
-### 用两个栈实现队列
-
-队列就是在尾部插入节点，头部删除节点。
-
-
-### 旋转数组的最小数字
-
-旋转数组是指把一个数组最开始的若干个元素搬到数组的末尾。输入一个递增排序的数组的旋转，比如{3，4，5，1，2}是{1，2，3，4，5}的一个旋转。求该数组的最小值。
-
-```
-int min(int *num, int length)
-```
-
-### 菲波那切数列
-
-```
-long long fabonacci(unsigned n)
-```
 
 ### 二进制中1的个数  
 
@@ -97,6 +39,136 @@ void print_to_max_with_length(int n)
 ```
 
 
+### 求 1+2+...+n
+
+要求不用乘除法，for/while/if/else/switch等关键字及条件判断语句
+
+
+```
+long long sum(unsigned int n);
+```
+
+### 不用加减乘除做加法
+
+求2个整数之和
+
+`位运算`
+
+
+```
+int sum(int,int)
+```
+
+
+###  丑数
+
+> 只包含因子 2，3，5的数叫做丑数；比如 6(2x3), 8(2x2x2) 是丑数（ugly number）
+
+求按从小到大的顺序，第1500个丑数
+
+```
+int ugly(int n)
+```
+
+
+
+### 把字符串转换成整数
+
+比如 "12343567754" -> 12343567754
+
+
+`NULL,空串,正负号,溢出`
+
+
+```
+int strToInt(char str);
+```
+
+
+
+
+# 字符串
+
+
+
+### 替换空格
+
+如把字符串中的每个空格替换成`%20` 
+
+`二遍扫描` 
+
+```
+void replace_blank(char *str);
+```
+
+
+
+###  第一个只出现一次的字符
+
+在字符串中查找第一个只出现一次的字符
+
+`哈希表：值为出现的次数` `二次扫描`
+
+```
+char find_appear_once_char(char *string)
+```
+
+
+
+### 字符串的排列
+
+输入一个字符串，打印该字符串中字符的所有排列
+
+`递归，分解`
+
+```
+void print_full_permutation(char *string)
+```
+
+
+
+### 反转单词顺序 VS 左旋转字符串
+
+a. 翻转句子中单词的顺序，但单词内字符不变。如 『I am a student』 ->  『student. a am I』
+
+`先以单词为单位翻转,整个句子再次翻转`
+
+
+```
+char *reverse_by_word(char *string)
+```
+
+b. 左旋转字符串是把字符串其那面的若干位转义到字符串的尾部。比如"abcedfsz"和数字2，结果是"cedfszab"
+
+```
+char *left_rotate_string(char *s,int n)
+```
+
+
+
+# 链表
+
+
+### 从尾到头打印链表 
+
+`栈`
+
+```
+void print_reversing(LinkList *head)
+```
+
+
+###  两个链表的第一个公共节点
+
+`长的链表先走k步`
+
+
+```
+LinkListNode *common_node(LinkList *head1,LinkList head2);
+```
+
+
+
 ### 在O(1)时间删除链表节点
 
 已经有一个头节点指针，还有一个指向改删除节点的指针  
@@ -105,18 +177,6 @@ void print_to_max_with_length(int n)
 
 ```
 void deleteNode(LinkList *head,LinkList *targetToDelete);
-```
-
-
-### 调整数组顺序使奇数位于偶数前面
-
-调整后，所有奇数在前半部分，偶数在后半部分
-
-`两边向中间扫描`
-
-
-```
-void reorder(int *data,int length)
 ```
 
 
@@ -152,128 +212,6 @@ LinkList *merge(LinkList *one,LinkList *two);
 ```
 
 
-### 树的子结构
-
-考察二叉树的基本操作。输入2课二叉树A和B，判断B是不是A的子结构。
-
-```
-struct BinaryTreeNode{
-	int m_value;
-	BinaryTreeNode *m_pleft;
-	BinaryTreeNode *m_pRight;
-}
-```
-
-
-```
-		8   				
-	   / \				   10
-	  /   \				   / \						
-	 6     10	 子结构	  11  9   
-	/ \	   / \            
-   5   7  9  11   	    
-```
-
-```
-bool subTree(BinaryTreeNode *root1,BinaryTreeNode *root2);
-```
-
-
-
-### 二叉树翻转
-
-```
-		8   				8
-	   / \				   / \
-	  /   \				  /   \   						
-	 6     10	 翻转后	10	   6
-	/ \	   / \          / \   / \
-   5   7  9  11   	   11  9 7   5
-``` 
-   
-`交换每个节点的左右子树`	   
-
-```
-void reverse(BinaryTreeNode *root);
-```
-
-
-### 从外向里顺时针打印矩阵
-
-```
-void print_matrix_clockwise(int *matrix,int cols,int rows);
-```
-
-延伸：按大小顺序打印矩阵
-
-### 实现一个能找到栈的最小元素的函数
-
-`最小元素用辅助栈保存`
-
-```
-int min(Stack *stack)
-```
-
-
-### 栈的压入，弹出序列
-
-输入2个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。比如：
-
-1，2，3，4，5是压栈序列，4，5，3，2，1是弹栈序列，但是4，3，5，1，2就不是弹栈序列
-
-```
-bool is_pop_order(int *push,int *pop,int length)
-```
-
-
-### 从上往下打印二叉树
-
-`辅助队列`
-
-```
-void print_binary_level(BinaryTreeNode *root)
-```
-
-
-### 二叉搜索树的后续遍历序列
-
-输入一个整数数组，判断该数组是不是某二叉查找树的后续遍历序列的结果。比如【 5，7，6，9，11，10，8】 是下面二叉查找树的后续遍历结果：
-
-```
-		8   			
-	   / \				   
-	  /   \				    						
-	 6     10	 
-	/ \	   / \         
-   5   7  9  11   	   
-```
-
-`寻找规律`
-
-```
-bool is_post_order(BST *root,int *data, int length);
-```
-
-
-### 二叉树中和为某一值的路径
-
-```
-	   10   			
-	   / \				   
-	  /   \				    						
-	 5     12	 
-	/ \	           
-   5   7    
-```
-
-和为22的路径有2条：10--5--7， 10--12
-
-`递归，栈`
-
-```
-void print_path(BinaryTree *root,int n)
-```
-
 
 ### 复杂链表的复制
 
@@ -291,26 +229,10 @@ typedef struct LinkListNode{
 LinkList * copy(LinkList *head);
 ```
 
-### 二叉搜索树与双向链表
-
-将二叉搜索树转换成一个排序的双向链表，只调整树中节点的指针指向
-
-`递归` `分解问题`
-
-```
-BST *transform(BST *root);
-```
 
 
-### 字符串的排列
+# 列表&数列
 
-输入一个字符串，打印该字符串中字符的所有排列
-
-`递归，分解`
-
-```
-void print_full_permutation(char *string)
-```
 
 
 ### 数组中出现次数超过一半的数字
@@ -363,71 +285,38 @@ int one_appear_count(int n)
 int minSort(int *nums, int length);
 ```
 
-###  丑数
 
-> 只包含因子 2，3，5的数叫做丑数
+### 菲波那切数列
 
-求按从小到大的顺序，第1500个丑数
-
-```
-int ugly(int n)
-```
-
-
-###  第一个只出现一次的字符
-
-在字符串中查找第一个只出现一次的字符
-
-`哈希表：值为出现的次数` `二次扫描`
+> 波那切数列 fabonacci , 也叫黄金分割数列, F (0)=0, F (1)=1, F (n)= F (n - 1)+ F (n - 2) ; 即 0、1、1、2、3、5、8、13、21、34、……
 
 ```
-char find_appear_once_char(char *string)
+long long fabonacci(unsigned n)
 ```
 
 
-###  数组中的逆序对
+### 调整数组顺序使奇数位于偶数前面
 
->数组中的两个数字如果前面一个数字大于后面的数字，这两个数字组成一个逆序对。如：[7，5，6，4] 的逆序对：(7,5)(7,6)(7,4)(5,4)(6,4)
+调整后，所有奇数在前半部分，偶数在后半部分
 
-输入一个数组，求出这个数组逆序对总数。
-
-`归并排序 O(nlogn),空间O(n)`
+`两边向中间扫描`
 
 
 ```
-int reversePairs(int *data,int length)
+void reorder(int *data,int length)
 ```
 
 
-###  两个链表的第一个公共节点
 
-`长的链表先走k步`
+### 旋转数组的最小数字
 
-
-```
-LinkListNode *common_node(LinkList *head1,LinkList head2);
-```
-
-
-### 数字在排序数组中出现的次数
-
-比如 {1，2，3，3，3，3，4，5}， 数字 3出现了4次
-
-`使用二分查找找第一个3，和最后一个3出现的位置`
+旋转数组是指把一个数组最开始的若干个元素搬到数组的末尾。输入一个递增排序的数组的旋转，比如{3，4，5，1，2}是{1，2，3，4，5}的一个旋转。求该数组的最小值。
 
 ```
-int appear_count(int *nums,int length,int n);
+int min(int *num, int length)
 ```
 
 
-###  二叉树的深度
-
-`递归`
-
-
-```
-int tree_depth(BTree *root);
-```
 
 ### 数组中只出现一次的数字
 
@@ -454,27 +343,37 @@ void find_two_numbers_appear_once(int *data,int length,int *ouput)
 
 `两边向中间扫描`
 
-
 ```
 void print_two_numbers(int *data,int length,int sum)
 ```
 
-### 反转单词顺序 VS 左旋转字符串
-
-a. 翻转句子中单词的顺序，但单词内字符不变。如 『I am a student』 ->  『student. a am I』
-
-`先以单词为单位翻转,整个句子再次翻转`
 
 
-```
-char *reverse_by_word(char *string)
-```
+###  数组中的逆序对
 
-b. 左旋转字符串是把字符串其那面的若干位转义到字符串的尾部。比如"abcedfsz"和数字2，结果是"cedfszab"
+> 数组中的两个数字如果前面一个数字大于后面的数字，这两个数字组成一个逆序对。如：[7，5，6，4] 的逆序对：(7,5)(7,6)(7,4)(5,4)(6,4)
+
+输入一个数组，求出这个数组逆序对总数。
+
+`归并排序 O(nlogn),空间O(n)`
+
 
 ```
-char *left_rotate_string(char *s,int n)
+int reversePairs(int *data,int length)
 ```
+
+
+
+### 数字在排序数组中出现的次数
+
+比如 {1，2，3，3，3，3，4，5}， 数字 3出现了4次
+
+`使用二分查找找第一个3，和最后一个3出现的位置`
+
+```
+int appear_count(int *nums,int length,int n);
+```
+
 
 
 ### n个色子的点数
@@ -498,6 +397,8 @@ bool is_straight(int *data,int length)
 
 ### 圆圈中最后剩下的数字(约瑟夫问题)
 
+> 约瑟夫问题: 又称为约瑟夫环, N个人围成一圈，从第一个开始报数，第M个将被杀掉，最后剩下一个，其余人都将被杀掉。例如N=6，M=5，被杀掉的顺序是：5，4，6，2，3
+
 0,1,...,n-1 这n个数字排成一个圆圈，从数字0开始从这个圆圈里面删除第m个数字，求出这个圆圈里最后剩下的数字。
 
 
@@ -505,45 +406,199 @@ bool is_straight(int *data,int length)
 int last_remaining(unsigned int n,unsigned int m)
 ```
 
-### 求 1+2+...+n
 
-要求不用乘除法，for/while/if/else/switch等关键字及条件判断语句
+# 栈 & 队列
 
 
-```
-long long sum(unsigned int n);
-```
+### 用两个栈实现队列
 
-### 不用加减乘除做加法
+队列就是在尾部插入节点，头部删除节点。
 
-求2个整数之和
 
-`位运算`
 
+### 实现一个能找到栈的最小元素的函数
+
+`最小元素用辅助栈保存`
 
 ```
-int sum(int,int)
+int min(Stack *stack)
 ```
 
 
-### 不能被继承的类
+### 栈的压入，弹出序列
 
+输入2个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。比如：
+
+1，2，3，4，5是压栈序列，4，5，3，2，1是弹栈序列，但是4，3，5，1，2就不是弹栈序列
+
+```
+bool is_pop_order(int *push,int *pop,int length)
+```
+
+
+
+
+# 矩阵
+
+> 矩阵用二维数组表示
+
+
+
+### 从外向里顺时针打印矩阵
+
+```
+void print_matrix_clockwise(int *matrix,int cols,int rows);
+```
+
+延伸：按大小顺序打印矩阵
+
+
+
+
+### 二维数组中的查找
+
+二维数组中每一行从左到右递增，每一列从上到下递增，判断数组中是否包含该整数。
+
+```
+bool find(int *matrix,int rows,int columns,int numbers)
+```
+
+
+
+
+# 二叉树
+
+
+
+### 重建二叉树
+
+输入某二叉树的前序遍历和中序遍历的结果，重建该二叉树
+
+```
+BinaryTree *construct(int *preorder,int inroder,int length);
+```
+
+
+### 树的子结构
+
+考察二叉树的基本操作。输入2课二叉树A和B，判断B是不是A的子结构。
+
+```
+struct BinaryTreeNode{
+	int m_value;
+	BinaryTreeNode *m_pleft;
+	BinaryTreeNode *m_pRight;
+}
+```
+
+
+```
+		8   				
+	   / \				   10
+	  /   \				   / \						
+	 6     10	 子结构	  11  9   
+	/ \	   / \            
+   5   7  9  11   	    
 ```
 
 ```
+bool subTree(BinaryTreeNode *root1,BinaryTreeNode *root2);
+```
 
 
-### 把字符串转换成整数
 
-比如 "12343567754" -> 12343567754
+### 二叉树翻转
+
+```
+		8   				8
+	   / \				   / \
+	  /   \				  /   \   						
+	 6     10	 翻转后	10	   6
+	/ \	   / \          / \   / \
+   5   7  9  11   	   11  9 7   5
+``` 
+   
+`交换每个节点的左右子树`	   
+
+```
+void reverse(BinaryTreeNode *root);
+```
 
 
-`NULL,空串,正负号,溢出`
+
+### 从上往下打印二叉树
+
+`辅助队列`
+
+```
+void print_binary_level(BinaryTreeNode *root)
+```
+
+
+### 二叉搜索树的后续遍历序列
+
+输入一个整数数组，判断该数组是不是某二叉查找树的后续遍历序列的结果。比如【 5，7，6，9，11，10，8】 是下面二叉查找树的后续遍历结果：
+
+```
+		8   			
+	   / \				   
+	  /   \				    						
+	 6     10	 
+	/ \	   / \         
+   5   7  9  11   	   
+```
+
+`寻找规律`
+
+```
+bool is_post_order(BST *root,int *data, int length);
+```
+
+
+### 二叉树中和为某一值的路径
+
+```
+	   10   			
+	   / \				   
+	  /   \				    						
+	 5     12	 
+	/ \	           
+   5   7    
+```
+
+和为22的路径有2条：10--5--7， 10--12
+
+`递归，栈`
+
+```
+void print_path(BinaryTree *root,int n)
+```
+
+
+
+
+### 二叉搜索树与双向链表
+
+将二叉搜索树转换成一个排序的双向链表，只调整树中节点的指针指向
+
+`递归` `分解问题`
+
+```
+BST *transform(BST *root);
+```
+
+
+
+###  二叉树的深度
+
+`递归`
 
 
 ```
-int strToInt(char str);
+int tree_depth(BTree *root);
 ```
+
+
 
 ### 树中2个结点的最低公共祖先
 
@@ -553,7 +608,19 @@ int strToInt(char str);
 
 
 
+# 其他
 
+
+### 不能被继承的类
+
+```
+
+```
+
+### 实现Singleton模式
+
+
+### 赋值运算符函数  
 
 
 
