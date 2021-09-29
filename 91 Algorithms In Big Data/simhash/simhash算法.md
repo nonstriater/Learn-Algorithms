@@ -1,2 +1,1 @@
-
-## simhash算法
+# simhash算法
