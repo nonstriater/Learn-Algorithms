@@ -79,20 +79,64 @@
 
 
 
+# 刷题框架套路
+
+遍历
+
+```
+# 数组遍历框架
+void traverse(int[] arr) {
+    for (int i = 0; i < arr.length; i++) {
+        // 迭代访问 arr[i]
+    }
+}
+
+# 链表遍历框架
+void traverse(ListNode head) {
+    for (ListNode p = head; p != null; p = p.next) {
+        // 迭代访问 p.val
+    }
+}
+
+```
 
 
-## [《剑指offer》](剑指offer/README.md)
+递归
 
-《剑指offer》里面给出了50到高质量的算法问题，很有学习的必要。
+```
+# 链表递归
+void traverse(ListNode head) {
+    // 递归访问 head.val
+    traverse(head.next);
+}
 
 
-## [《编程之美》](编程之美/README.md)
+# 二叉树递归
+void traverse(TreeNode root) {
+    traverse(root.left);
+    traverse(root.right);
+}
+
+# 多叉树递归
+void traverse(TreeNode root) {
+    for (TreeNode child : root.children)
+        traverse(child);
+}
+
+# 图的递归：，用个布尔数组 visited 做标记就行了
 
 
+```
+
+
+
+# 参考
 
 [九度OJ](http://ac.jobdu.com/index.php)
 [leetcode 题目](https://leetcode.com/)
-
+[labuladong 的算法小抄](https://labuladong.gitee.io/algo/1/2/)
+[《剑指offer》](剑指offer/README.md)  《剑指offer》里面给出了50到高质量的算法问题，很有学习的必要。
+[《编程之美》](编程之美/README.md)
 
 
 
