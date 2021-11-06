@@ -6,15 +6,15 @@
 针对空间，就一个办法，大而化小，分而治之。常采用hash映射
 
 
-* Hash映射/分而治之
-* Bitmap
-* Bloom filter(布隆过滤器)
-* 双层桶划分
-* Trie树
-* 数据库索引
+* [Hash映射,分而治之](Hash映射,分而治之.md)
+* [Bitmap](Bitmap.md)
+* [Bloom filter(布隆过滤器)](Bloomfilter.md)
+* [双层桶划分](双层桶划分.md)
+* [Trie树](../4%20Tree/4-字典树Trie/README.md)
+* [数据库索引](Inverted%20Index/数据库索引.md)
 * 倒排索引(Inverted Index)
-* 外排序
-* simhash算法
+* [外排序](../6%20Sort/外排序.md)
+* [simhash算法](simhash算法.md)
 * 分布处理之Mapreduce
 
 
