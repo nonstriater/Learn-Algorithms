@@ -149,7 +149,7 @@ void quicksort(int *a, int left, int right){
 
 ### 归并排序merge
 
-分治算法(divide-and-conquer)，必然用到递归 ; 
+分治算法(divide-and-conquer)，必然用到递归 ;  
 
 2个有序数组的合并操作是O(n)的复杂度
 因此我们可以将无序的数组，分成2个子数组分别排序，然后再merge,依次类推
@@ -161,7 +161,7 @@ void quicksort(int *a, int left, int right){
 3. 合并   
 
 
-归并排序的代码框架如下：
+归并排序的代码框架，套用二叉树的后续遍历思路，如下：
 
 ```
 void sort(int[] nums, int lo, int hi) {
@@ -174,6 +174,35 @@ void sort(int[] nums, int lo, int hi) {
     merge(nums, lo, mid, hi);
     /************************/
 }
+
+//合并连个有序数组； 从后往前merge
+public void merge(int[] arr,int low,int mid,int high,int[] tmp){
+        int i = 0;
+        int j = low,k = mid+1;  //左边序列和右边序列起始索引
+
+        while(j <= mid && k <= high){
+            if(arr[j] < arr[k]){
+                tmp[i++] = arr[j++];
+            }else{
+                tmp[i++] = arr[k++];
+            }
+        }
+
+        //若左边序列还有剩余，则将其全部拷贝进tmp[]中
+        while(j <= mid){    
+            tmp[i++] = arr[j++];
+        }
+        
+        while(k <= high){
+            tmp[i++] = arr[k++];
+        }
+        
+        for(int t=0;t<i;t++){
+            arr[low+t] = tmp[t];
+        }
+    }
+
+
 ```
 
 ![](./mergesort.gif)
