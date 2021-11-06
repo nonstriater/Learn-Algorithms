@@ -164,22 +164,20 @@
 ## 15个经典基础算法
 
 
+* [KMP 字符串匹配算法](1%20String/KMP.md)
 * [Hash](3%20Hash%20Table/README.md)   
 * [快速排序](6%20Sort/README.md)
 * 快速选择SELECT 
-* BFS/DFS （广度/深度优先遍历）    
 * [红黑树 （一种弱/自平衡的`二叉查找树`）](4%20Tree/9-红黑树%20R-B%20tree/红黑树.md)
-* [DP (动态规划 dynamic programming)](8%20Algorithms%20Analysis/动态规划.md)
-* [KMP 字符串匹配算法](1%20String/KMP.md)
-* A*寻路算法： 求解最短路径 
-* Dijkstra：最短路径算法 （八卦下：Dijkstra是荷兰的计算机科学家,提出”信号量和PV原语“,"解决哲学家就餐问题",”死锁“也是它提出来的） 
-* `SPFA(shortest path faster algorithm)` 单元最短路径算法  
+* [BFS/DFS （广度/深度优先遍历）](5%20Graph/DFS%20和%20BFS.md)
+* [`A*`寻路算法： 求解最短路径](5%20Graph/最短路径.md)
+* Dijkstra：最短路径算法
+* `SPFA(Shortest Path Faster Algorithm)` 单元最短路径算法  
 * 启发式搜索
 * 遗传算法 `GA`  
-* 图像特征提取之`SIFT` 算法  
+* [DP (动态规划 dynamic programming)](8%20Algorithms%20Analysis/动态规划.md)
+* 图像特征提取之`SIFT` 算法 , 广泛的应用于图像识别，图像检索，3D重建等CV的各种领域 
 * 傅立叶变换  
-
-
 
 
 ## 推荐阅读
