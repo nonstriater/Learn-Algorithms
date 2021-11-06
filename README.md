@@ -163,9 +163,10 @@
 
 ## 15个经典基础算法
 
+
 * [Hash](3%20Hash%20Table/README.md)   
 * [快速排序](6%20Sort/README.md)
-* 快递选择SELECT 
+* 快速选择SELECT 
 * BFS/DFS （广度/深度优先遍历）    
 * [红黑树 （一种弱/自平衡的`二叉查找树`）](4%20Tree/9-红黑树%20R-B%20tree/红黑树.md)
 * [DP (动态规划 dynamic programming)](8%20Algorithms%20Analysis/动态规划.md)
