@@ -255,7 +255,7 @@ http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
 
 [OI Wiki](https://github.com/24OI/OI-wiki/) 主要内容是 OI / ACM-ICPC 相关的知识整理。
 
-
+[labuladong 的算法小抄](https://labuladong.gitee.io/algo/) 作者整理了很多的解题套路框架，看完获益良多
 
 ## 联系
 
