@@ -146,12 +146,12 @@ void traverse(TreeNode root) {
 
 
 # 参考
-
-[九度OJ](http://ac.jobdu.com/index.php)
-[leetcode 题目](https://leetcode.com/)
-[labuladong 的算法小抄](https://labuladong.gitee.io/algo/1/2/)
-[《剑指offer》](剑指offer/README.md)  《剑指offer》里面给出了50到高质量的算法问题，很有学习的必要。
-[《编程之美》](编程之美/README.md)
-
+ 
+[九度OJ](http://ac.jobdu.com/index.php)    
+[leetcode 题目](https://leetcode.com/)    
+[labuladong 的算法小抄](https://labuladong.gitee.io/algo/1/2/)     
+[《剑指offer》](剑指offer/README.md)  《剑指offer》里面给出了50到高质量的算法问题，很有学习的必要。    
+[《编程之美》](编程之美/README.md)    
+ 
 
 
