@@ -18,6 +18,7 @@
 * 数组，字符串问题：二分查找、 快慢指针、 左右指针、 滑动窗口、 前缀和数组、 差分数组。
 * 二叉树问题：递归
 * [动态规划问题](../8%20Algorithms%20Analysis/动态规划.md)
+* [常见算法题目Java实现](https://github.com/nonstriater/deep-in-java/tree/master/src/main/java/com/nonstriater/deepinjava/algo)
 
 
 ## [字符串](1%20字符串.md)
