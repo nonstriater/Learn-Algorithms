@@ -122,11 +122,29 @@ public int bsearch(int[] nums, int target){
 ```Java
 
 #快排 quickSort
-
-
+void quicksort(int[] nums, int left, int right){
+    if (left<right){//加上这个，不然有死循环，造成堆栈溢出，这也是递归结束条件
+        
+        //前序遍历位置
+        //使得局部有序，i作为分隔
+        int i = partion(a,left,right);
+        
+        quicksort(a,left,i-1); 
+        quicksort(a,i+1,right);     
+    }    
+}
 
 #归并排序 mergeSort
+void mergeSort(int[] nums, int left, int right){
+    int mid = (low + high) / 2;
+    sort(nums, low, mid);
+    sort(nums, mid + 1, high);
 
+    /****** 后序遍历位置 ******/
+    // 合并两个排好序的子数组
+    merge(nums, low, mid, high);
+    /************************/
+}
 
 
 ```

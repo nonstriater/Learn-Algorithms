@@ -14,7 +14,7 @@
 * 归并排序 ： 将无序的数组，分成2个子数组分别排序，然后再merge ； 分治递归， 二叉树的后续遍历思路
 * 插入排序 ：
 * 希尔排序 ：
-* 堆排序 ： 
+* [堆排序](../4%20Tree/8-堆/堆.md) ： 
 
 
 ### 线性排序算法
@@ -71,7 +71,7 @@
 
 代码框架如下
 
-```
+```C
 void quicksort(int *a, int left, int right){
         if (left<right){//加上这个，不然有死循环，造成堆栈溢出，这也是递归结束条件
         
@@ -164,16 +164,17 @@ void quicksort(int *a, int left, int right){
 归并排序的代码框架，套用二叉树的后续遍历思路，如下：
 
 ```
-void sort(int[] nums, int lo, int hi) {
-    int mid = (lo + hi) / 2;
-    sort(nums, lo, mid);
-    sort(nums, mid + 1, hi);
+void sort(int[] nums, int low, int high) {
+    int mid = (low + high) / 2;
+    sort(nums, low, mid);
+    sort(nums, mid + 1, high);
 
     /****** 后序遍历位置 ******/
     // 合并两个排好序的子数组
-    merge(nums, lo, mid, hi);
+    merge(nums, low, mid, high);
     /************************/
 }
+
 
 //合并连个有序数组； 从后往前merge
 public void merge(int[] arr,int low,int mid,int high,int[] tmp){
