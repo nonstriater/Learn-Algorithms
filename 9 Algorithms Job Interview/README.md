@@ -24,7 +24,7 @@
 ## 刷题框架套路
 
 
-遍历
+### 遍历
 
 ```
 # 数组遍历框架
@@ -41,12 +41,21 @@ void traverse(ListNode head) {
     }
 }
 
+void traverse(ListNode head) {
+
+    ListNode p = head;
+    while(p.next != null)
+        ...
+        p = p.next
+ 
+}
+
 ```
 
 
-递归
+### 递归
 
-```
+```Java
 # 链表递归
 void traverse(ListNode head) {
     // 递归访问 head.val
@@ -71,6 +80,56 @@ void traverse(TreeNode root) {
 ```
 
 
+### 二分查找  
+
+```Java
+public int bsearch(int[] nums, int target){
+        
+        if(nums == null) {
+            return -1;
+        }
+        
+        int low = 0;
+        int high =  nums.length;
+
+        while(low < high){
+            middle = (high + low ) / 2;        
+            if(nums[middle] < target){
+                low = middle;
+            } else if (nums[middle] == target) {
+                high = middle;//
+            } else {
+                high = middle; 
+            }
+        }
+        
+        return low;        
+    } 
+```
+
+### 滑动窗口
+
+```Java
+
+
+```
+
+
+### 排序算法
+
+[排序算法](../6%20Sort/README.md)
+
+```Java
+
+#快排 quickSort
+
+
+
+#归并排序 mergeSort
+
+
+
+```
 
 
 
