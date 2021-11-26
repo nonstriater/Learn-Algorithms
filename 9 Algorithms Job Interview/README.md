@@ -13,12 +13,65 @@
 * 编程细节：多练习，总结
 
 
-常用解题套路工具
+## 常用解题套路工具
 
 * 数组，字符串问题：二分查找、 快慢指针、 左右指针、 滑动窗口、 前缀和数组、 差分数组。
 * 二叉树问题：递归
 * [动态规划问题](../8%20Algorithms%20Analysis/动态规划.md)
 * [常见算法题目Java实现](https://github.com/nonstriater/deep-in-java/tree/master/src/main/java/com/nonstriater/deepinjava/algo)
+
+
+## 刷题框架套路
+
+
+遍历
+
+```
+# 数组遍历框架
+void traverse(int[] arr) {
+    for (int i = 0; i < arr.length; i++) {
+        // 迭代访问 arr[i]
+    }
+}
+
+# 链表遍历框架
+void traverse(ListNode head) {
+    for (ListNode p = head; p != null; p = p.next) {
+        // 迭代访问 p.val
+    }
+}
+
+```
+
+
+递归
+
+```
+# 链表递归
+void traverse(ListNode head) {
+    // 递归访问 head.val
+    traverse(head.next);
+}
+
+
+# 二叉树递归
+void traverse(TreeNode root) {
+    traverse(root.left);
+    traverse(root.right);
+}
+
+# 多叉树递归
+void traverse(TreeNode root) {
+    for (TreeNode child : root.children)
+        traverse(child);
+}
+
+# 图的递归：，用个布尔数组 visited 做标记就行了
+
+```
+
+
+
 
 
 ## [字符串](1%20字符串.md)
@@ -93,56 +146,6 @@
 
 ## [智力思维训练](9%20智力思维训练.md)
 
-
-
-# 刷题框架套路
-
-遍历
-
-```
-# 数组遍历框架
-void traverse(int[] arr) {
-    for (int i = 0; i < arr.length; i++) {
-        // 迭代访问 arr[i]
-    }
-}
-
-# 链表遍历框架
-void traverse(ListNode head) {
-    for (ListNode p = head; p != null; p = p.next) {
-        // 迭代访问 p.val
-    }
-}
-
-```
-
-
-递归
-
-```
-# 链表递归
-void traverse(ListNode head) {
-    // 递归访问 head.val
-    traverse(head.next);
-}
-
-
-# 二叉树递归
-void traverse(TreeNode root) {
-    traverse(root.left);
-    traverse(root.right);
-}
-
-# 多叉树递归
-void traverse(TreeNode root) {
-    for (TreeNode child : root.children)
-        traverse(child);
-}
-
-# 图的递归：，用个布尔数组 visited 做标记就行了
-
-
-```
 
 
 

@@ -22,6 +22,10 @@
 * 链表
 * 双向链表
 
+### [数组](2%20List/README.md)
+
+* [数组数列问题](%20Algorithms%20Job%20Interview/5%20数组数列问题.md)
+
 数组和链表结构是基础结构，散列表、栈、队列、堆、树、图等等各种数据结构都基于数组和链表结构实现。
 
 ### [队列](2%20Queue/README.md)
@@ -36,13 +40,13 @@
 
 ### [字符串算法](1%20String/README.md)
 
-* 排序
-* 查找
+* 子串查找 [字符串常见题目参考这里](%20Algorithms%20Job%20Interview/1%20字符串.md) 
     * BF算法  
     * KMP算法  
     * BM算法  
 * 正则表达式
 * 数据压缩
+* 排序
 
 
 ### [树](4%20Tree/README.md)
@@ -92,22 +96,25 @@
   
 ### [查找算法](7%20Search/README.md)  
 
-* 顺序表查找：顺序查找  
-* 有序表查找：二分查找  
+
+* 哈希表： O(1)  [hashtable实现参考这里](../3%20Hash%20Table/README.md)
+* 有序表查找：二分查找 
+* 顺序表查找：顺序查找, 复杂度O(N)  
 * 分块查找： 块内无序，块之间有序；可以先二分查找定位到块，然后再到`块`中顺序查找  
 * 动态查找:  二叉排序树，AVL树，B- ，B+（这里之所以叫 `动态查找表`，是因为表结构是查找的过程中动态生成的）
-* 哈希表：  O(1)     
+   
 
 
 ## [算法设计思想](8%20Algorithms%20Analysis/README.md)
- 
-* 迭代法  
-* 穷举搜索法  
-* 递推法  
-* 动态规划  
-* 贪心算法  
-* 回溯  
-* 分治算法  
+
+
+* [递归](8%20Algorithms%20Analysis/递归.md) 
+* [分治算法](8%20Algorithms%20Analysis/分治算法.md) 
+* [动态规划](8%20Algorithms%20Analysis/动态规划.md)  
+* [回溯法](8%20Algorithms%20Analysis/回溯法.md)
+* [迭代法](8%20Algorithms%20Analysis/迭代法.md)  
+* [穷举搜索法](8%20Algorithms%20Analysis/穷举搜索法.md)   
+* [贪心算法](8%20Algorithms%20Analysis/贪心算法.md) 
 
 
 
