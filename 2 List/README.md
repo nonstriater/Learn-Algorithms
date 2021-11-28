@@ -60,6 +60,7 @@ typedef struct Entry{
 应用场景
 
 * mysql B+树 叶子节点就使用 双向链表，方便 `age<10` 类似条件查询，或者 倒序查询 如 `order by desc` ，从后向前遍历数据
+* Java  AQS 中的等待队列， 是一个双端 双向链表 的结构 （FIFO 结构）
 
 
 ## 循环链表
@@ -70,6 +71,10 @@ typedef struct Entry{
 
 
 ## 双向循环链表
+
+
+
+
 
 
 

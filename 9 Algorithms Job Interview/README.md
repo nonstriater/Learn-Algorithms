@@ -36,12 +36,6 @@ void traverse(int[] arr) {
 
 # 链表遍历框架
 void traverse(ListNode head) {
-    for (ListNode p = head; p != null; p = p.next) {
-        // 迭代访问 p.val
-    }
-}
-
-void traverse(ListNode head) {
 
     ListNode p = head;
     while(p.next != null)
@@ -49,8 +43,8 @@ void traverse(ListNode head) {
         p = p.next
  
 }
-
 ```
+
 
 
 ### 递归
@@ -79,10 +73,36 @@ void traverse(TreeNode root) {
 
 ```
 
+比如，二叉树的最近公共祖先
+
+```Java
+TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        // base case
+        if (root == null) return null;
+        if (root == p || root == q) return root;
+
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        // 情况 1  ：p, q 在 root 为根的树中
+        if (left != null && right != null) {
+            return root;
+        }
+        // 情况 2 ：p, q 不在 在 root 为根的树中
+        if (left == null && right == null) {
+            return null;
+        }
+        // 情况 3 ： p, q 只有1个在root 为根的树中
+        return left == null ? right : left;
+    }
+```
+
 
 ### 二分查找  
 
+[查找算法](../7%20Search/README.md)
+
 ```Java
+// 1, 2, 2, 2, 2, 3
 public int bsearch(int[] nums, int target){
         
         if(nums == null) {
@@ -90,16 +110,16 @@ public int bsearch(int[] nums, int target){
         }
         
         int low = 0;
-        int high =  nums.length;
+        int high =  nums.length;// 注意
 
         while(low < high){
             middle = (high + low ) / 2;        
             if(nums[middle] < target){
-                low = middle;
+                low = middle + 1;
             } else if (nums[middle] == target) {
-                high = middle;//
+                high = middle;//继续向左早
             } else {
-                high = middle; 
+                high = middle;  // 注意 , 这里没有 -1
             }
         }
         
@@ -107,11 +127,69 @@ public int bsearch(int[] nums, int target){
     } 
 ```
 
+
+### 快慢指针
+
+如下判断链表是否有环
+
+```
+public static boolean hasCycle(LinkNode head) {
+        if(head == null) {
+            return false;
+        }
+
+        LinkNode p = head, q = head;
+        while(p.next != null && p.next.next != null && q.next != null) {
+            p = p.next.next;
+            q = q.next;
+            if(p == q) {
+                return true;
+            }
+        }
+        return false;
+    }
+```
+
+
+### 左右指针
+
+```
+
+```
+
+
 ### 滑动窗口
+
+滑动窗口： 无重复字符的最长子串
 
 ```Java
 
+public static int longestSubString(char[] s){
+        int left = 0, right = 0;
+        int res = 0; // 记录最长结果
 
+        Map<Character, Integer> window = new HashMap<Character, Integer>();
+        while (right < s.length) {
+            Character c = s[right];
+            
+            //窗口变大
+            right++;
+            window.put(c, window.getOrDefault(c, 0) + 1); //java写的麻烦,不一定记得这个api
+
+            if (window.get(c) > 1) {
+                //判断左侧窗口是否要收缩
+                char d = s[left];
+                
+                left ++;
+                window.put(d, window.get(d)-1);
+            }
+
+            // 在这里更新答案
+            res = res > (right-left) ? res: (right-left);
+
+        }
+        return res;
+}        
 ```
 
 
@@ -126,7 +204,7 @@ void quicksort(int[] nums, int left, int right){
     if (left<right){//加上这个，不然有死循环，造成堆栈溢出，这也是递归结束条件
         
         //前序遍历位置
-        //使得局部有序，i作为分隔
+        //使得局部有序，i作为分隔， i 前面的元素 小于 i 后面的元素
         int i = partion(a,left,right);
         
         quicksort(a,left,i-1); 
