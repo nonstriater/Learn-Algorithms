@@ -163,7 +163,7 @@ public static boolean hasCycle(LinkNode head) {
 滑动窗口： 无重复字符的最长子串
 
 ```Java
-
+//如 ”abcabbcbb“ 输出 3
 public static int longestSubString(char[] s){
         int left = 0, right = 0;
         int res = 0; // 记录最长结果
