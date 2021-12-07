@@ -153,8 +153,44 @@ public static boolean hasCycle(LinkNode head) {
 
 ### 左右指针
 
-```
 
+快排中 挖坑(pivot) 排序
+```Java
+// pivot 选择 尾部节点， 代码写起来更加简单； 移动元素更方便
+// 左右指针技巧
+static int partition(int[] nums, int left, int right){
+
+        int pivot = nums[right];//选尾部节点作为 pivot
+        int end = right;
+
+        right--;
+        while (left < right) {
+
+            if (nums[left] <= pivot) {
+                left ++ ; //左边指针 窗口变小
+                continue;
+            }
+
+            //元素比 pivot 大，右边指针 窗口变小
+            //swap left & right
+            swap(nums, left, right);
+            right--;
+
+        }
+
+        // 跟 pivot 元素置换
+        int i = 0;
+        if (nums[left] <= pivot) {
+            //swap left+1 & pivot
+           i = left +1;
+        } else {//swap left & pivot
+           i =  left ;
+        }
+
+        swap(nums, i, end);
+
+        return i;
+    }
 ```
 
 
@@ -226,6 +262,10 @@ void mergeSort(int[] nums, int left, int right){
 
 
 ```
+
+### 动态规划 DP
+
+
 
 
 

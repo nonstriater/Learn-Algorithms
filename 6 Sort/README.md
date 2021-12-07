@@ -145,6 +145,7 @@ void quicksort(int *a, int left, int right){
 
 ```Java
 // pivot 选择 尾部节点， 代码写起来更加简单； 移动元素更方便
+// 左右指针技巧
 static int partition(int[] nums, int left, int right){
 
         int pivot = nums[right];//选尾部节点作为 pivot
@@ -154,11 +155,11 @@ static int partition(int[] nums, int left, int right){
         while (left < right) {
 
             if (nums[left] <= pivot) {
-                left ++ ;
+                left ++ ; //左边指针 窗口变小
                 continue;
             }
 
-            //元素比 pivot 大，右边窗口变小
+            //元素比 pivot 大，右边指针 窗口变小
             //swap left & right
             swap(nums, left, right);
             right--;

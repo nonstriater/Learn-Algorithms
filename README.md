@@ -22,9 +22,9 @@
 * 链表
 * 双向链表
 
-### [数组](2%20List/README.md)
+### [数组](2%20List/数组.md)
 
-* [数组数列问题](%20Algorithms%20Job%20Interview/5%20数组数列问题.md)
+* [数组数列问题](9%20Algorithms%20Job%20Interview/5%20数组数列问题.md)
 
 数组和链表结构是基础结构，散列表、栈、队列、堆、树、图等等各种数据结构都基于数组和链表结构实现。
 
@@ -40,7 +40,7 @@
 
 ### [字符串算法](1%20String/README.md)
 
-* 子串查找 [字符串常见题目参考这里](%20Algorithms%20Job%20Interview/1%20字符串.md) 
+* 子串查找 [字符串常见题目参考这里](9%20Algorithms%20Job%20Interview/1%20字符串.md) 
     * BF算法  
     * KMP算法  
     * BM算法  
