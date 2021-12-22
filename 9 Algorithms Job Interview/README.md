@@ -196,6 +196,8 @@ static int partition(int[] nums, int left, int right){
 
 ### 滑动窗口
 
+双指针中有一类比较难的技巧就是`滑动窗口`
+
 滑动窗口： 无重复字符的最长子串
 
 ```Java
@@ -205,6 +207,7 @@ public static int longestSubString(char[] s){
         int res = 0; // 记录最长结果
 
         Map<Character, Integer> window = new HashMap<Character, Integer>();
+        
         while (right < s.length) {
             Character c = s[right];
             
