@@ -22,6 +22,12 @@
 * 链表
 * 双向链表
 
+### [数组](2%20List/数组.md)
+
+* [数组数列问题](9%20Algorithms%20Job%20Interview/5%20数组数列问题.md)
+
+数组和链表结构是基础结构，散列表、栈、队列、堆、树、图等等各种数据结构都基于数组和链表结构实现。
+
 ### [队列](2%20Queue/README.md)
  
 * 队列
@@ -34,31 +40,30 @@
 
 ### [字符串算法](1%20String/README.md)
 
-* 排序
-* 查找
+* 子串查找 [字符串常见题目参考这里](9%20Algorithms%20Job%20Interview/1%20字符串.md) 
     * BF算法  
     * KMP算法  
     * BM算法  
 * 正则表达式
 * 数据压缩
+* 排序
 
 
 ### [树](4%20Tree/README.md)
 
-* 二叉树    
-* 二叉查找树   
-* 伸展树(splay tree 分裂树)   
-* 平衡二叉树AVL    
-* 红黑树  
-* B树,B+,B*  
-* R树  
-* Trie树(前缀树)  
-* 后缀树  
-* 最优二叉树(赫夫曼树) 
-* 二叉堆 （大根堆，小根堆）   
-* 二项树    
-* 二项堆  
+* 二叉树  [快速排序](6%20Sort/README.md)就是个二叉树的前序遍历，归并排序就是个二叉树的后序遍历  
+* [二叉查找树BST](4%20Tree/2-二叉查找树/二叉查找树.md)  有序的二叉树，中序遍历结果是递增的
+* [平衡二叉树 AVL树](4%20Tree/3-平衡树AVL/README.md)   绝对平衡二叉树；
+* [红黑树](4%20Tree/9-红黑树%20R-B%20tree/红黑树.md)  弱平衡二叉树；使用广泛
+* [B树](4%20Tree/7-B树/B树.md)
+* [B+树](4%20Tree/7-B树/B+树.md)  mysql 索引使用 B+树 的数据结构	  
+* [字典树trie](4%20Tree/4-字典树Trie/README.md) 字典树也叫前缀树，单词查找树
+* [二叉堆](4%20Tree/8-堆/堆.md)  
+* [伸展树](4%20Tree/5-伸展树/伸展树.md)
+* [后缀树](4%20Tree/6-后缀树/后缀树.md)
 * 斐波那契堆(Fibonacci Heap)   
+* 最优二叉树(赫夫曼树)  
+
 
 
 ### [图的算法](5%20Graph/README.md)
@@ -90,22 +95,25 @@
   
 ### [查找算法](7%20Search/README.md)  
 
-* 顺序表查找：顺序查找  
-* 有序表查找：二分查找  
+
+* 哈希表： O(1)  [hashtable实现参考这里](../3%20Hash%20Table/README.md)
+* 有序表查找：二分查找 
+* 顺序表查找：顺序查找, 复杂度O(N)  
 * 分块查找： 块内无序，块之间有序；可以先二分查找定位到块，然后再到`块`中顺序查找  
 * 动态查找:  二叉排序树，AVL树，B- ，B+（这里之所以叫 `动态查找表`，是因为表结构是查找的过程中动态生成的）
-* 哈希表：  O(1)     
+   
 
 
 ## [算法设计思想](8%20Algorithms%20Analysis/README.md)
- 
-* 迭代法  
-* 穷举搜索法  
-* 递推法  
-* 动态规划  
-* 贪心算法  
-* 回溯  
-* 分治算法  
+
+
+* [递归](8%20Algorithms%20Analysis/递归.md) 
+* [分治算法](8%20Algorithms%20Analysis/分治算法.md) 
+* [动态规划](8%20Algorithms%20Analysis/动态规划.md)  
+* [回溯法](8%20Algorithms%20Analysis/回溯法.md)
+* [迭代法](8%20Algorithms%20Analysis/迭代法.md)  
+* [穷举搜索法](8%20Algorithms%20Analysis/穷举搜索法.md)   
+* [贪心算法](8%20Algorithms%20Analysis/贪心算法.md) 
 
 
 
@@ -163,22 +171,21 @@
 
 ## 15个经典基础算法
 
-* Hash  
-* 快速排序 
-* 快递选择SELECT 
-* BFS/DFS （广度/深度优先遍历）    
-* 红黑树 （一种自平衡的`二叉查找树`）  
-* KMP    字符串匹配算法
-* DP (动态规划 dynamic programming)   
-* A*寻路算法： 求解最短路径 
-* Dijkstra：最短路径算法 （八卦下：Dijkstra是荷兰的计算机科学家,提出”信号量和PV原语“,"解决哲学家就餐问题",”死锁“也是它提出来的） 
-* 遗传算法  
-* 启发式搜索   
-* 图像特征提取之 SIFT 算法  
+
+* [KMP 字符串匹配算法](1%20String/KMP.md)
+* [Hash](3%20Hash%20Table/README.md)   
+* [快速排序](6%20Sort/README.md)
+* 快速选择SELECT 
+* [红黑树 （一种弱/自平衡的`二叉查找树`）](4%20Tree/9-红黑树%20R-B%20tree/红黑树.md)
+* [BFS/DFS （广度/深度优先遍历）](5%20Graph/DFS%20和%20BFS.md)
+* [`A*`寻路算法： 求解最短路径](5%20Graph/最短路径.md)
+* Dijkstra：最短路径算法
+* `SPFA(Shortest Path Faster Algorithm)` 单元最短路径算法  
+* 启发式搜索
+* 遗传算法 `GA`  
+* [DP (动态规划 dynamic programming)](8%20Algorithms%20Analysis/动态规划.md)
+* 图像特征提取之`SIFT` 算法 , 广泛的应用于图像识别，图像检索，3D重建等CV的各种领域 
 * 傅立叶变换  
-* SPFA(shortest path faster algorithm) 单元最短路径算法 		
-
-
 
 
 ## 推荐阅读
@@ -240,21 +247,26 @@ http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
    
 ### 编程网站
 
-* [leetcode](http://leetcode.com/)    
+* [leetcode](http://leetcode.com/)   
+* [codetop](https://codetop.cc/home) 企业高频面试题库，刷题必备
 * [openjudge](http://openjudge.cn/)  开放在线程序评测平台，可以创建自己的OJ小组   
 * [九度OJ](http://ac.jobdu.com/index.php)     
 * 这有个[ACM训练方案](http://www.java3z.com/cwbwebhome/article/article19/res041.html)   
 
-### 其它
+
+### 网课
 
 [高级数据结构和算法](https://www.coursera.org/learn/gaoji-shuju-jiegou/)  北大教授张铭老师在coursera上的课程。完成这门课之时，你将掌握多维数组、广义表、Trie树、AVL树、伸展树等高级数据结构，并结合内排序、外排序、检索、索引有关的算法，高效地解决现实生活中一些比较复杂的应用问题。当然coursera上也还有很多其它算法方面的视频课程。
 
 
 [算法设计与分析 Design and Analysis of Algorithms](https://class.coursera.org/algorithms-001/lecture) 由北大教授Wanling Qu在coursera讲授的一门算法课程。首先介绍一些与算法有关的基础知识，然后阐述经典的算法设计思想和分析技术，主要涉及的算法设计技术是：分治策略、动态规划、贪心法、回溯与分支限界等。每个视频都配有相应的讲义（pdf文件）以便阅读和复习。
 
-[OI Wiki](https://github.com/24OI/OI-wiki/) 主要内容是 OI / ACM-ICPC 相关的知识整理。
 
+### 其它
 
+[OI Wiki](https://github.com/24OI/OI-wiki/) 主要内容是 OI/ACM-ICPC 编程竞赛 (competitive programming) 相关的知识整理, 包括基础知识、常见题型、解题思路以及常用工具等内容。
+
+[labuladong 的算法小抄](https://labuladong.gitee.io/algo/) 作者整理了很多的解题套路框架，看完获益良多
 
 ## 联系
 
